@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="quick_appointment_wizard_form" model="ir.ui.view">
+        <field name="name">quick.appointment.wizard.form</field>
+        <field name="model">quick.appointment.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Создание быстрой записи на приём">
+                <group>
+                    <field name="patient_id"/>
+                    <field name="doctor_id"/>
+                    <field name="reason"/>
+                </group>
+                <footer>
+                    <button string="Создать приём"
+                            type="object"
+                            name="create_appointment"
+                            class="btn-primary"/>
+                    <button string="Отмена"
+                            class="btn-secondary"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_quick_appointment_wizard" model="ir.actions.act_window">
+        <field name="name">Быстрая запись на прием</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">quick.appointment.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

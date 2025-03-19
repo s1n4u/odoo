@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_partner_form_inherit_vet_clinic" model="ir.ui.view">
+        <field name="name">res.partner.vet.patient.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/notebook" position="inside">
+                <page string="Домашние животные">
+                    <field name="pet_ids">
+                        <tree>
+                            <field name="name"/>
+                            <field name="species"/>
+                            <field name="breed"/>
+                            <field name="birth_date"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,13 @@
+<odoo>
+    <record id="hh_disease_type_data_1" model="hr.hospital.disease.type">
+    <field name="name">Asthma</field>
+    </record>
+
+    <record id="hh_disease_type_data_2" model="hr.hospital.disease.type">
+    <field name="name">Diabetes</field>
+    </record>
+
+    <record id="hh_disease_type_data_3" model="hr.hospital.disease.type">
+    <field name="name">Heart Disease</field>
+    </record>
+</odoo>
