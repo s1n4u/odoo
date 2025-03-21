@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+from odoo.tools.translate import _
 
 class Doctor(models.Model):
     _name = 'hr.hospital.doctor'
@@ -13,4 +14,4 @@ class Doctor(models.Model):
     def _check_mentor_not_intern(self):
         for record in self:
             if record.mentor_id and record.mentor_id.is_intern:
-                raise models.ValidationError("An intern cannot be a mentor.")
+                raise models.ValidationError(_("An intern cannot be a mentor."))

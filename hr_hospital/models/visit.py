@@ -1,5 +1,6 @@
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
+from odoo.tools.translate import _
 
 class Visit(models.Model):
     _name = 'hr.hospital.visit'
@@ -9,7 +10,7 @@ class Visit(models.Model):
         ('planned', 'Planned'),
         ('done', 'Done'),
         ('cancelled', 'Cancelled')
-    ], string='Status', default='planned')
+    ], default='planned')
 
     planned_datetime = fields.Datetime(string='Planned Date')
     actual_datetime = fields.Datetime(string='Actual Visit Date')
@@ -28,10 +29,10 @@ class Visit(models.Model):
                     ('planned_datetime', '=', record.planned_datetime.date())
                 ])
                 if existing:
-                    raise ValidationError("Patient already has a visit with this doctor on the same day.")
+                    raise ValidationError(_("Patient already has a visit with this doctor on the same day."))
 
     def unlink(self):
         for record in self:
             if record.diagnosis_ids:
-                raise ValidationError("You cannot delete a visit with diagnoses.")
+                raise ValidationError(_("You cannot delete a visit with diagnoses."))
         return super().unlink()

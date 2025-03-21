@@ -9,6 +9,7 @@
     'version': '17.0.2.2.0',
     'depends': ['base'],
     'data': [
+
         'security/ir.model.access.csv',
 
         'data/disease_demo.xml',

@@ -22,8 +22,7 @@
         </field>
     </record>
 
-    <!-- ID обновлён для корректной ссылки в menuitem -->
-    <record id="hr_hospital.action_disease" model="ir.actions.act_window">
+    <record id="action_disease" model="ir.actions.act_window">
         <field name="name">Diseases</field>
         <field name="res_model">hr.hospital.disease</field>
         <field name="view_mode">tree,form</field>

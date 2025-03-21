@@ -30,8 +30,7 @@
         </field>
     </record>
 
-    <!-- ID обновлён для корректной ссылки в menuitem -->
-    <record id="hr_hospital.action_visit" model="ir.actions.act_window">
+    <record id="action_visit" model="ir.actions.act_window">
         <field name="name">Visits</field>
         <field name="res_model">hr.hospital.visit</field>
         <field name="view_mode">tree,form</field>

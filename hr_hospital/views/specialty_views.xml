@@ -19,13 +19,12 @@
         </field>
     </record>
 
-    <record id="hr_hospital.action_specialty" model="ir.actions.act_window">
+    <record id="action_specialty" model="ir.actions.act_window">
         <field name="name">Specialties</field>
         <field name="res_model">hr.hospital.specialty</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- menuitem должен идти после action -->
     <menuitem id="menu_hr_hospital_specialty"
               name="Specialties"
               parent="menu_hr_hospital_root"

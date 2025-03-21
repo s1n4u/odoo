@@ -1,5 +1,5 @@
 <odoo>
-    <!-- Корневой пункт меню -->
+
     <menuitem id="menu_hr_hospital_root"
               name="Hospital"
               sequence="10"/>

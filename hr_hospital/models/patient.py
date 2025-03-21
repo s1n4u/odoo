@@ -1,5 +1,5 @@
-from odoo import models, fields, api
 from datetime import date
+from odoo import models, fields, api
 
 class Patient(models.Model):
     _name = 'hr.hospital.patient'
@@ -7,10 +7,10 @@ class Patient(models.Model):
     _description = 'Patient'
 
     doctor_id = fields.Many2one('hr.hospital.doctor', string='Personal Doctor')
-    birthday = fields.Date(string='Birthday')
+    birthday = fields.Date()
     age = fields.Integer(compute='_compute_age', store=True)
     passport_id = fields.Char(string='Passport')
-    contact_person = fields.Char(string='Contact Person')
+    contact_person = fields.Char()
 
     personal_doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
