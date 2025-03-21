@@ -1,0 +1,9 @@
+<odoo>
+    <record id="specialty_demo_1" model="hr.hospital.specialty">
+        <field name="name">Therapist</field>
+    </record>
+
+    <record id="specialty_demo_2" model="hr.hospital.specialty">
+        <field name="name">Surgeon</field>
+    </record>
+</odoo>

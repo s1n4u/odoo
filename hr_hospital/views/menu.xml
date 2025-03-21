@@ -1,0 +1,37 @@
+<odoo>
+    <!-- Корневой пункт меню -->
+    <menuitem id="menu_hr_hospital_root"
+              name="Hospital"
+              sequence="10"/>
+
+    <menuitem id="menu_hr_hospital_doctor"
+              name="Doctors"
+              parent="menu_hr_hospital_root"
+              action="hr_hospital.action_doctor"
+              sequence="20"/>
+
+    <menuitem id="menu_hr_hospital_patient"
+              name="Patients"
+              parent="menu_hr_hospital_root"
+              action="hr_hospital.action_patient"
+              sequence="30"/>
+
+    <menuitem id="menu_hr_hospital_disease"
+              name="Diseases"
+              parent="menu_hr_hospital_root"
+              action="hr_hospital.action_disease"
+              sequence="40"/>
+
+    <menuitem id="menu_hr_hospital_diagnosis"
+              name="Diagnoses"
+              parent="menu_hr_hospital_root"
+              action="hr_hospital.action_diagnosis"
+              sequence="50"/>
+
+    <menuitem id="menu_hr_hospital_visit"
+              name="Visits"
+              parent="menu_hr_hospital_root"
+              action="hr_hospital.action_visit"
+              sequence="60"/>
+
+</odoo>

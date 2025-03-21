@@ -1,0 +1,39 @@
+<odoo>
+    <record id="view_visit_tree" model="ir.ui.view">
+        <field name="name">Visit Tree</field>
+        <field name="model">hr.hospital.visit</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="status"/>
+                <field name="planned_datetime"/>
+                <field name="actual_datetime"/>
+                <field name="doctor_id"/>
+                <field name="patient_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_visit_form" model="ir.ui.view">
+        <field name="name">Visit Form</field>
+        <field name="model">hr.hospital.visit</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="status"/>
+                    <field name="planned_datetime"/>
+                    <field name="actual_datetime"/>
+                    <field name="doctor_id"/>
+                    <field name="patient_id"/>
+                    <field name="diagnosis_ids"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- ID обновлён для корректной ссылки в menuitem -->
+    <record id="hr_hospital.action_visit" model="ir.actions.act_window">
+        <field name="name">Visits</field>
+        <field name="res_model">hr.hospital.visit</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

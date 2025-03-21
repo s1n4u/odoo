@@ -1,0 +1,62 @@
+<odoo>
+    <!-- Patient Tree View -->
+    <record id="view_patient_tree" model="ir.ui.view">
+        <field name="name">hr.hospital.patient.tree</field>
+        <field name="model">hr.hospital.patient</field>
+        <field name="arch" type="xml">
+            <tree string="Patients">
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="personal_doctor_id"/>
+                <field name="age"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Patient Form View -->
+    <record id="view_patient_form" model="ir.ui.view">
+        <field name="name">hr.hospital.patient.form</field>
+        <field name="model">hr.hospital.patient</field>
+        <field name="arch" type="xml">
+            <form string="Patient">
+                <group>
+                    <field name="first_name"/>
+                    <field name="last_name"/>
+                    <field name="gender"/>
+                    <field name="birthday"/>
+                    <field name="age" readonly="1"/>
+                    <field name="passport_id"/>
+                    <field name="phone"/>
+                    <field name="contact_person"/>
+                    <field name="personal_doctor_id"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action: List View Button to Open Wizard -->
+    <record id="action_set_personal_doctor_wizard" model="ir.actions.server">
+        <field name="name">Set Personal Doctor</field>
+        <field name="model_id" ref="model_hr_hospital_patient"/>
+        <field name="binding_model_id" ref="model_hr_hospital_patient"/>
+        <field name="binding_view_types">list</field>
+        <field name="state">code</field>
+        <field name="code">
+            action = {
+                'type': 'ir.actions.act_window',
+                'name': 'Set Personal Doctor',
+                'res_model': 'hr.hospital.set.personal.doctor.wizard',
+                'view_mode': 'form',
+                'target': 'new',
+                'context': {'active_ids': active_ids},
+            }
+        </field>
+    </record>
+
+    <record id="action_patient" model="ir.actions.act_window">
+        <field name="name">Patients</field>
+        <field name="res_model">hr.hospital.patient</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

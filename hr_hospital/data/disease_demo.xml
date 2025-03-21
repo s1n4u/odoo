@@ -1,0 +1,24 @@
+<odoo>
+    <record id="disease_1" model="hr.hospital.disease">
+        <field name="name">Respiratory</field>
+    </record>
+    <record id="disease_2" model="hr.hospital.disease">
+        <field name="name">Asthma</field>
+        <field name="parent_id" ref="disease_1"/>
+    </record>
+    <record id="disease_3" model="hr.hospital.disease">
+        <field name="name">Bronchitis</field>
+        <field name="parent_id" ref="disease_1"/>
+    </record>
+    <record id="disease_4" model="hr.hospital.disease">
+        <field name="name">Cardiology</field>
+    </record>
+    <record id="disease_5" model="hr.hospital.disease">
+        <field name="name">Arrhythmia</field>
+        <field name="parent_id" ref="disease_4"/>
+    </record>
+    <record id="disease_6" model="hr.hospital.disease">
+        <field name="name">Heart Failure</field>
+        <field name="parent_id" ref="disease_4"/>
+    </record>
+</odoo>

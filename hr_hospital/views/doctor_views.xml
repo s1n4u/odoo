@@ -1,0 +1,44 @@
+<odoo>
+    <record id="view_doctor_tree" model="ir.ui.view">
+        <field name="name">Doctor Tree</field>
+        <field name="model">hr.hospital.doctor</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="specialty_id"/>
+                <field name="is_intern"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_doctor_form" model="ir.ui.view">
+        <field name="name">Doctor Form</field>
+        <field name="model">hr.hospital.doctor</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="first_name"/>
+                    <field name="last_name"/>
+                    <field name="phone"/>
+                    <field name="gender"/>
+                    <field name="image_1920"/>
+                    <field name="specialty_id"/>
+                    <field name="is_intern"/>
+                    <field name="mentor_id">
+                        <visible>
+                            <value eval="is_intern"/>
+                        </visible>
+                    </field>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- ID обновлён для корректной ссылки в menuitem -->
+    <record id="hr_hospital.action_doctor" model="ir.actions.act_window">
+        <field name="name">Doctors</field>
+        <field name="res_model">hr.hospital.doctor</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
