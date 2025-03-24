@@ -61,7 +61,7 @@ class Visit(models.Model):
     def _check_doctor_double_booking(self):
         for record in self:
             if record.planned_datetime and record.doctor_id:
-                start = record.planned_datetime
+                start = record.planned_datetime - timedelta(hours=2)
                 end = record.planned_datetime + timedelta(hours=2)
 
                 overlapping = self.search([
