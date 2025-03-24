@@ -61,18 +61,17 @@ class Visit(models.Model):
     def _check_doctor_double_booking(self):
         for record in self:
             if record.planned_datetime and record.doctor_id:
-                end_window = record.planned_datetime + timedelta(hours=2)
+                end = record.planned_datetime + timedelta(hours=2)
 
                 overlapping = self.search([
                     ('id', '!=', record.id),
                     ('doctor_id', '=', record.doctor_id.id),
-                    ('planned_datetime', '>=', record.planned_datetime),
-                    ('planned_datetime', '<', end_window),
+                    ('planned_datetime', '<=', end),
                 ], limit=1)
 
                 if overlapping:
                     raise ValidationError(_(
-                        "This doctor already has another appointment within 2 hours of the selected time."))
+                        "This doctor already has an appointment within 2 hours of the selected time."))
 
     def unlink(self):
         for record in self:
