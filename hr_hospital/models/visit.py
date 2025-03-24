@@ -1,3 +1,4 @@
+from datetime import timedelta
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 from odoo.tools.translate import _
@@ -9,30 +10,45 @@ class Visit(models.Model):
     status = fields.Selection([
         ('planned', 'Planned'),
         ('done', 'Done'),
-        ('cancelled', 'Cancelled')
-    ], default='planned')
+        ('cancelled', 'Cancelled'),
+    ],
+        default='planned',
+    )
 
-    planned_datetime = fields.Datetime(string='Planned Date')
-    actual_datetime = fields.Datetime(string='Actual Visit Date')
-    doctor_id = fields.Many2one('hr.hospital.doctor', string='Doctor', required=True)
-    patient_id = fields.Many2one('hr.hospital.patient', string='Patient', required=True)
-    diagnosis_ids = fields.One2many('hr.hospital.diagnosis', 'visit_id', string='Diagnoses')
+    actual_datetime = fields.Datetime(
+        string='Actual Date',
+        default=lambda self: fields.Datetime.now()
+    )
+    planned_datetime = fields.Datetime(
+        string='Planned Visit Date',
+    )
+    doctor_id = fields.Many2one(
+        comodel_name='hr.hospital.doctor',
+        string='Doctor', required=True,
+    )
+    patient_id = fields.Many2one(
+        comodel_name='hr.hospital.patient',
+        string='Patient',
+        required=True,
+    )
+    diagnosis_ids = fields.One2many(
+        comodel_name='hr.hospital.diagnosis',
+        inverse_name='visit_id',
+        string='Diagnoses',
+    )
 
-    @api.constrains('doctor_id', 'patient_id', 'planned_datetime')
-    def _check_unique_visit(self):
+    @api.constrains('doctor_id', 'planned_datetime')
+    def _check_doctor_double_booking(self):
         for record in self:
-            if record.planned_datetime:
-                existing = self.search([
+            if record.planned_datetime and record.doctor_id:
+                end = record.planned_datetime + timedelta(hours=2)
+
+                overlapping = self.search([
                     ('id', '!=', record.id),
                     ('doctor_id', '=', record.doctor_id.id),
-                    ('patient_id', '=', record.patient_id.id),
-                    ('planned_datetime', '=', record.planned_datetime.date())
-                ])
-                if existing:
-                    raise ValidationError(_("Patient already has a visit with this doctor on the same day."))
+                    ('planned_datetime', '<=', end),
+                ], limit=1)
 
-    def unlink(self):
-        for record in self:
-            if record.diagnosis_ids:
-                raise ValidationError(_("You cannot delete a visit with diagnoses."))
-        return super().unlink()
+                if overlapping:
+                    raise ValidationError(_(
+                        "This doctor already has an appointment within 2 hours of the selected time."))

@@ -1,5 +1,4 @@
 {
-
     'name': 'Hospital Management Extended',
     'summary': 'Extended hospital module with diagnoses, hierarchy and wizards',
     'author': 's1n',
@@ -24,7 +23,8 @@
         'views/diagnosis_views.xml',
         'views/menu.xml',
         'views/specialty_views.xml',
-        'views/set_personal_doctor_wizard_view.xml',
+
+        'wizard/set_personal_doctor_wizard_view.xml',
     ],
     'installable': True,
     'application': True

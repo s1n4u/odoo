@@ -6,16 +6,19 @@ class Patient(models.Model):
     _inherit = 'hr.hospital.person'
     _description = 'Patient'
 
-    doctor_id = fields.Many2one('hr.hospital.doctor', string='Personal Doctor')
-    birthday = fields.Date()
-    age = fields.Integer(compute='_compute_age', store=True)
-    passport_id = fields.Char(string='Passport')
-    contact_person = fields.Char()
-
-    personal_doctor_id = fields.Many2one(
+    doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        string='Personal Doctor'
+        string='Personal Doctor',
     )
+    birthday = fields.Date()
+    age = fields.Integer(
+        compute='_compute_age',
+        store=True,
+    )
+    passport_id = fields.Char(
+        string='Passport',
+    )
+    contact_person = fields.Char()
 
     @api.depends('birthday')
     def _compute_age(self):

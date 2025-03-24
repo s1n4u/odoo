@@ -6,9 +6,17 @@ class Doctor(models.Model):
     _inherit = 'hr.hospital.person'
     _description = 'Doctor'
 
-    specialty_id = fields.Many2one('hr.hospital.specialty', string='Specialty')
-    is_intern = fields.Boolean(string='Intern')
-    mentor_id = fields.Many2one('hr.hospital.doctor', string='Mentor')
+    specialty_id = fields.Many2one(
+        comodel_name='hr.hospital.specialty',
+        string='Specialty',
+    )
+    is_intern = fields.Boolean(
+        string='Intern',
+    )
+    mentor_id = fields.Many2one(
+        comodel_name='hr.hospital.doctor',
+        string='Mentor',
+    )
 
     @api.constrains('mentor_id')
     def _check_mentor_not_intern(self):
