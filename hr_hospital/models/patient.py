@@ -18,6 +18,21 @@ class Patient(models.Model):
     passport_id = fields.Char(
         string='Passport',
     )
+
+    visits_ids = fields.One2many(
+        comodel_name='hr.hospital.visit',
+        inverse_name='patient_id',
+        string='Visits'
+    )
+
+    diagnosis_ids = fields.One2many(
+        comodel_name='hr.hospital.diagnosis',
+        inverse_name='visit_id',
+        string='Diagnosis History',
+        compute='_compute_diagnosis_ids',
+        store=False
+    )
+
     contact_person = fields.Char()
 
     @api.depends('birthday')
@@ -31,3 +46,23 @@ class Patient(models.Model):
                 record.age = age
             else:
                 record.age = 0
+
+    def create_visit_action(self):
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'New Visit',
+            'res_model': 'hr.hospital.visit',
+            'view_mode': 'form',
+            'target': 'current',
+            'context': {
+                'default_patient_id': self.id,
+                'default_doctor_id': self.doctor_id.id if self.doctor_id else False,
+            }
+        }
+
+    @api.depends('visits_ids.diagnosis_ids')
+    def _compute_diagnosis_ids(self):
+        for patient in self:
+            diagnosis_set = patient.visits_ids.mapped('diagnosis_ids')
+            patient.diagnosis_ids = diagnosis_set

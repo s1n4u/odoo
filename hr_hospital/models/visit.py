@@ -7,7 +7,8 @@ class Visit(models.Model):
     _name = 'hr.hospital.visit'
     _description = 'Patient Visit'
 
-    status = fields.Selection([
+    status = fields.Selection(
+        selection=[
         ('planned', 'Planned'),
         ('done', 'Done'),
         ('cancelled', 'Cancelled'),

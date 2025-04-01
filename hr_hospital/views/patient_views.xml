@@ -1,5 +1,6 @@
 <odoo>
 
+
     <record id="view_patient_tree" model="ir.ui.view">
         <field name="name">hr.hospital.patient.tree</field>
         <field name="model">hr.hospital.patient</field>
@@ -13,30 +14,79 @@
         </field>
     </record>
 
+
     <record id="view_patient_form" model="ir.ui.view">
         <field name="name">hr.hospital.patient.form</field>
         <field name="model">hr.hospital.patient</field>
         <field name="arch" type="xml">
             <form string="Patient">
-                <group>
-                    <field name="first_name"/>
-                    <field name="last_name"/>
-                    <field name="gender"/>
-                    <field name="birthday"/>
-                    <field name="age" readonly="1"/>
-                    <field name="passport_id"/>
-                    <field name="phone"/>
-                    <field name="contact_person"/>
-                    <field name="doctor_id"/>
-                </group>
+
+                <header>
+                    <button name="create_visit_action"
+                            type="object"
+                            string="Create Visit"
+                            class="btn-primary"/>
+                </header>
+
+
+                <div class="oe_button_box" name="button_box">
+                    <button name="hr_hospital.action_visit"
+                            type="action"
+                            class="oe_stat_button"
+                            icon="fa-calendar"
+                            context="{'search_default_patient_id': active_id}">
+                        <field name="visits_ids" widget="statinfo" string="Visits"/>
+                    </button>
+                </div>
+
+                <sheet>
+                    <group>
+                        <field name="first_name"/>
+                        <field name="last_name"/>
+                        <field name="gender"/>
+                        <field name="birthday"/>
+                        <field name="age" readonly="1"/>
+                        <field name="passport_id"/>
+                        <field name="phone"/>
+                        <field name="contact_person"/>
+                        <field name="doctor_id"/>
+                    </group>
+
+                    <group string="Diagnosis History">
+                        <field name="diagnosis_ids">
+                            <tree>
+                                <field name="visit_id"/>
+                                <field name="disease_id"/>
+                                <field name="description"/>
+                                <field name="approved"/>
+                            </tree>
+                        </field>
+                    </group>
+
+                </sheet>
+
             </form>
         </field>
     </record>
 
+    <record id="view_patient_search" model="ir.ui.view">
+        <field name="name">hr.hospital.patient.search</field>
+        <field name="model">hr.hospital.patient</field>
+        <field name="arch" type="xml">
+            <search string="Search Patients">
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="phone"/>
+                <filter string="Doctor Assigned" name="has_doctor" domain="[('doctor_id', '!=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+
     <record id="action_patient" model="ir.actions.act_window">
         <field name="name">Patients</field>
         <field name="res_model">hr.hospital.patient</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,search</field>
     </record>
 
 </odoo>
