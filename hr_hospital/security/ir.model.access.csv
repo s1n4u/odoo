@@ -7,3 +7,4 @@ access_diagnosis,Diagnosis,model_hr_hospital_diagnosis,base.group_user,1,1,1,1
 access_specialty,specialty,model_hr_hospital_specialty,base.group_user,1,1,1,1
 access_specialty_user,access.specialty.user,model_hr_hospital_specialty,base.group_user,1,1,1,1
 access_set_personal_doctor_wizard,access_set_personal_doctor_wizard,model_hr_hospital_set_personal_doctor_wizard,,1,1,1,0
+access_diagnosis_report_wizard,access_diagnosis_report_wizard,model_hr_hospital_diagnosis_report_wizard,,1,1,1,1

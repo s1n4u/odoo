@@ -35,7 +35,8 @@
                             class="oe_stat_button"
                             icon="fa-calendar"
                             context="{'search_default_patient_id': active_id}">
-                        <field name="visits_ids" widget="statinfo" string="Visits"/>
+                        <field name="visits_ids" widget="statinfo"
+                               string="Visits"/>
                     </button>
                 </div>
 
@@ -77,7 +78,8 @@
                 <field name="first_name"/>
                 <field name="last_name"/>
                 <field name="phone"/>
-                <filter string="Doctor Assigned" name="has_doctor" domain="[('doctor_id', '!=', False)]"/>
+                <filter string="Doctor Assigned" name="has_doctor"
+                        domain="[('doctor_id', '!=', False)]"/>
             </search>
         </field>
     </record>

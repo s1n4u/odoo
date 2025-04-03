@@ -11,6 +11,8 @@
 
         'security/ir.model.access.csv',
 
+        'wizard/diagnosis_report_wizard_view.xml',
+
         'data/disease_demo.xml',
         'data/demo_specialties.xml',
         'data/demo_persons.xml',
@@ -26,6 +28,7 @@
         'views/specialty_views.xml',
 
         'wizard/set_personal_doctor_wizard_view.xml',
+
     ],
     'installable': True,
     'application': True

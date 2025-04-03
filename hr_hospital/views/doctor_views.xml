@@ -12,25 +12,71 @@
         </field>
     </record>
 
-    <record id="view_doctor_form" model="ir.ui.view">
-        <field name="name">Doctor Form</field>
+    <record id="view_doctor_search" model="ir.ui.view">
+        <field name="name">hr.hospital.doctor.search</field>
         <field name="model">hr.hospital.doctor</field>
         <field name="arch" type="xml">
-            <form>
-                <group>
-                    <field name="first_name"/>
-                    <field name="last_name"/>
-                    <field name="phone"/>
-                    <field name="gender"/>
-                    <field name="image_1920"/>
-                    <field name="specialty_id"/>
-                    <field name="is_intern"/>
-                    <field name="mentor_id">
-                        <visible>
-                            <value eval="is_intern"/>
-                        </visible>
-                    </field>
-                </group>
+            <search string="Search Doctors">
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="specialty_id"/>
+                <filter string="Interns" name="filter_interns"
+                        domain="[('is_intern','=',True)]"/>
+                <filter string="Mentors" name="filter_mentors"
+                        domain="[('intern_ids','!=',False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_doctor_form" model="ir.ui.view">
+        <field name="name">hr.hospital.doctor.form</field>
+        <field name="model">hr.hospital.doctor</field>
+        <field name="arch" type="xml">
+            <form string="Doctor">
+                <header>
+                    <button name="%(hr_hospital.action_diagnosis_report_wizard)d"
+                            string="Print Diagnosis Report"
+                            type="action"
+                            class="btn-secondary"
+                            context="{'default_doctor_ids': [active_id]}"/>
+                </header>
+                <sheet>
+                    <group string="Personal Info" colspan="2">
+                        <field name="first_name"/>
+                        <field name="last_name"/>
+                        <field name="phone"/>
+                        <field name="gender"/>
+                    </group>
+
+                    <group string="Professional Info" colspan="2">
+                        <field name="specialty_id"/>
+                        <field name="is_intern"/>
+                        <field name="mentor_id" visibility="is_intern"/>
+                    </group>
+
+                    <notebook visibility="not is_intern">
+                        <page string="Interns">
+                            <field name="intern_ids">
+                                <kanban>
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            <div>
+                                                <strong>
+                                                    <t t-esc="record.first_name.value"/>
+                                                    <t t-esc="record.last_name.value"/>
+                                                </strong>
+                                                <br/>
+                                                <span>
+                                                    <t t-esc="record.phone.value"/>
+                                                </span>
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
             </form>
         </field>
     </record>
@@ -39,7 +85,8 @@
         <field name="name">hr.hospital.doctor.kanban</field>
         <field name="model">hr.hospital.doctor</field>
         <field name="arch" type="xml">
-            <kanban class="o_kanban_example" quick_create="false" default_group_by="specialty_id">
+            <kanban class="o_kanban_example" quick_create="false"
+                    default_group_by="specialty_id">
                 <field name="id"/>
                 <field name="first_name"/>
                 <field name="last_name"/>
@@ -52,17 +99,26 @@
                         <div class="oe_kanban_global_click">
                             <div class="o_kanban_card_header">
                                 <strong>
-                                    <t t-esc="record.first_name.value"/> <t t-esc="record.last_name.value"/>
+                                    <t t-esc="record.first_name.value"/>
+                                    <t t-esc="record.last_name.value"/>
                                 </strong>
                             </div>
                             <div class="o_kanban_details">
-                                <div><strong>Phone:</strong> <t t-esc="record.phone.value"/></div>
-                                <div><strong>Gender:</strong> <t t-esc="record.gender.value"/></div>
-                                <div><strong>Intern:</strong>
+                                <div>
+                                    <strong>Phone:</strong>
+                                    <t t-esc="record.phone.value"/>
+                                </div>
+                                <div>
+                                    <strong>Gender:</strong>
+                                    <t t-esc="record.gender.value"/>
+                                </div>
+                                <div>
+                                    <strong>Intern:</strong>
                                     <t t-if="record.is_intern.raw_value">✅</t>
                                     <t t-if="!record.is_intern.raw_value">❌</t>
                                 </div>
-                                <div class="oe_kanban_footer_left" style="margin-top: 8px;">
+                                <div class="oe_kanban_footer_left"
+                                     style="margin-top: 8px;">
                                     <button type="action"
                                             name="hr_hospital.action_visit"
                                             context="{'default_doctor_id': id}"

@@ -3,6 +3,7 @@ from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 from odoo.tools.translate import _
 
+
 class Visit(models.Model):
     _name = 'hr.hospital.visit'
     _description = 'Patient Visit'
@@ -42,8 +43,10 @@ class Visit(models.Model):
         for record in self:
             if record.planned_datetime:
                 visit_day = record.planned_datetime.date()
-                start_of_day = fields.Datetime.from_string(f"{visit_day} 00:00:00")
-                end_of_day = fields.Datetime.from_string(f"{visit_day} 23:59:59")
+                start_of_day = fields.Datetime.from_string(
+                    f"{visit_day} 00:00:00")
+                end_of_day = fields.Datetime.from_string(
+                    f"{visit_day} 23:59:59")
 
                 existing = self.search([
                     ('id', '!=', record.id),
