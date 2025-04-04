@@ -58,7 +58,9 @@ class Visit(models.Model):
 
                 if existing:
                     raise ValidationError(_(
-                        "This patient already has a visit with this doctor on the same day."))
+                        "This patient already has a visit with this doctor "
+                        "on the same day."
+                    ))
 
     @api.constrains('doctor_id', 'planned_datetime')
     def _check_doctor_double_booking(self):
@@ -76,7 +78,9 @@ class Visit(models.Model):
 
                 if overlapping:
                     raise ValidationError(_(
-                        "This doctor already has an appointment within 2 hours of the selected time."))
+                        "This doctor already has an appointment within "
+                        "2 hours of the selected time."
+                    ))
 
     def unlink(self):
         for record in self:

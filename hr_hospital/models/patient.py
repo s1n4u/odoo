@@ -42,8 +42,10 @@ class Patient(models.Model):
         for record in self:
             if record.birthday:
                 age = today.year - record.birthday.year
-                if (today.month, today.day) < (
-                record.birthday.month, record.birthday.day):
+                if (
+                    (today.month, today.day) <
+                    (record.birthday.month, record.birthday.day)
+                ):
                     age -= 1
                 record.age = age
             else:
@@ -59,7 +61,9 @@ class Patient(models.Model):
             'target': 'current',
             'context': {
                 'default_patient_id': self.id,
-                'default_doctor_id': self.doctor_id.id if self.doctor_id else False,
+                'default_doctor_id': (
+                    self.doctor_id.id if self.doctor_id else False
+                ),
             }
         }
 

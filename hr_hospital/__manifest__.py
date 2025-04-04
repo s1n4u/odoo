@@ -1,6 +1,6 @@
 {
     'name': 'Hospital Management Extended',
-    'summary': 'Extended hospital module with diagnoses, hierarchy and wizards',
+    'summary': 'Hospital module with diagnoses and patient wizards',
     'author': 's1n',
     'website': 'https://odoo.school/',
     'category': 'Healthcare',
