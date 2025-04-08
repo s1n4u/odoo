@@ -97,32 +97,38 @@ hr_hospital
 
   hr_hospital/
   ├── models/
-  │   ├── person.py
+  │   ├── __init__.py
+  │   ├── diagnosis.py
+  │   ├── disease.py
   │   ├── doctor.py
   │   ├── patient.py
-  │   ├── disease.py
-  │   ├── visit.py
-  │   └── diagnosis.py
+  │   ├── person.py
+  │   ├── specialty.py
+  │   └── visit.py
   ├── wizards/
-  │   ├── set_personal_doctor.py
-  │   └── diagnosis_report_wizard.py
+  │   ├── __init__.py
+  │   ├── diagnosis_report_wizard.py
+  │   ├── diagnosis_report_wizard_view.xml
+  │   ├── set_personal_doctor_wizard.py
+  │   └── set_personal_doctor_wizard_view.xml
   ├── views/
+  │   ├── diagnosis_views.xml
+  │   ├── disease_views.xml
   │   ├── doctor_views.xml
   │   ├── patient_views.xml
-  │   ├── disease_views.xml
-  │   ├── visit_views.xml
-  │   ├── diagnosis_views.xml
+  │   ├── person_views.xml
   │   ├── specialty_views.xml
-  │   ├── diagnosis_report_wizard_view.xml
+  │   ├── visit_views.xml
   │   └── menu.xml
   ├── data/
-  │   ├── specialty_demo.xml
+  │   ├── demo_specialty.xml
   │   ├── disease_demo.xml
   │   ├── demo_persons.xml
-  │   ├── demo_visits.xml
-  │   └── demo_diagnoses.xml
+  │   └── visit_demo.xml
   ├── security/
-  │   ├── ir.model.access.csv
+  │   └── ir.model.access.csv
+  ├── __init__.py
+  ├── __manifest__.py
   └── README.rst
 
 Автор
