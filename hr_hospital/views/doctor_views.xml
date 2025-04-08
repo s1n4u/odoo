@@ -40,6 +40,7 @@
                             class="btn-secondary"
                             context="{'default_doctor_ids': [active_id]}"/>
                 </header>
+
                 <sheet>
                     <group string="Personal Info" colspan="2">
                         <field name="first_name"/>

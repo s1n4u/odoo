@@ -10,7 +10,7 @@
     'data': [
 
         'security/ir.model.access.csv',
-
+        'views/doctor_report.xml',
         'wizard/diagnosis_report_wizard_view.xml',
 
         'data/disease_demo.xml',
@@ -27,7 +27,10 @@
         'views/menu.xml',
         'views/specialty_views.xml',
 
+
         'wizard/set_personal_doctor_wizard_view.xml',
+
+
 
     ],
     'installable': True,

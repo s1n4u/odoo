@@ -25,6 +25,19 @@ class Doctor(models.Model):
         string='Interns',
     )
 
+    visit_ids = fields.One2many(
+        comodel_name='hr.hospital.visit',
+        inverse_name='doctor_id',
+        string='Visits',
+    )
+
+    company_id = fields.Many2one(
+        'res.company',
+        string="Company",
+        default=lambda self: self.env.company,
+        readonly=True
+    )
+
     @api.constrains('mentor_id')
     def _check_mentor_not_intern(self):
         for record in self:
