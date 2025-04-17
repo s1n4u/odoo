@@ -3,7 +3,7 @@
     <record id="visit_demo_1" model="hr.hospital.visit">
         <field name="doctor_id" ref="doctor_demo_1"/>
         <field name="patient_id" ref="patient_demo_1"/>
-        <field name="planned_datetime">2024-04-01 10:00:00</field>
+        <field name="planned_datetime">2025-04-01 10:00:00</field>
         <field name="status">planned</field>
     </record>
 
@@ -18,7 +18,7 @@
     <record id="visit_demo_2" model="hr.hospital.visit">
         <field name="doctor_id" ref="doctor_demo_2"/>
         <field name="patient_id" ref="patient_demo_2"/>
-        <field name="planned_datetime">2024-03-15 09:30:00</field>
+        <field name="planned_datetime">2025-03-15 09:30:00</field>
         <field name="status">done</field>
     </record>
 
@@ -33,7 +33,7 @@
     <record id="visit_demo_3" model="hr.hospital.visit">
         <field name="doctor_id" ref="doctor_demo_3"/>
         <field name="patient_id" ref="patient_demo_3"/>
-        <field name="planned_datetime">2024-03-22 14:00:00</field>
+        <field name="planned_datetime">2025-03-22 14:00:00</field>
         <field name="status">cancelled</field>
     </record>
 
@@ -47,7 +47,7 @@
     <record id="visit_demo_4" model="hr.hospital.visit">
         <field name="doctor_id" ref="doctor_demo_4"/>
         <field name="patient_id" ref="patient_demo_4"/>
-        <field name="planned_datetime">2024-03-28 11:15:00</field>
+        <field name="planned_datetime">2025-03-28 11:15:00</field>
         <field name="status">done</field>
     </record>
 

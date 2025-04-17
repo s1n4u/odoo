@@ -1,0 +1,128 @@
+msgid "Patient"
+msgstr "Пацієнт"
+
+msgid "Doctor"
+msgstr "Лікар"
+
+msgid "Intern"
+msgstr "Інтерн"
+
+msgid "Manager"
+msgstr "Менеджер"
+
+msgid "Administrator"
+msgstr "Адміністратор"
+
+msgid "Personal Doctor"
+msgstr "Персональний лікар"
+
+msgid "Visits"
+msgstr "Відвідування"
+
+msgid "Diagnosis"
+msgstr "Діагноз"
+
+msgid "Disease"
+msgstr "Хвороба"
+
+msgid "Specialty"
+msgstr "Спеціальність"
+
+msgid "Planned"
+msgstr "Заплановано"
+
+msgid "Done"
+msgstr "Завершено"
+
+msgid "Cancelled"
+msgstr "Скасовано"
+
+msgid "Visit"
+msgstr "Візит"
+
+msgid "Treatment Description"
+msgstr "Опис лікування"
+
+msgid "Mentor"
+msgstr "Ментор"
+
+msgid "Intern's diagnosis must be approved by a mentor."
+msgstr "Діагноз інтерна має бути затверджений ментором."
+
+msgid "This doctor already has an appointment within 2 hours of the selected time."
+msgstr "У цього лікаря вже є прийом у межах 2 годин від вибраного часу."
+
+msgid "You cannot delete a visit with diagnoses."
+msgstr "Ви не можете видалити візит із діагнозами."
+
+msgid "This patient already has a visit with this doctor on the same day."
+msgstr "Цей пацієнт уже має візит до цього лікаря у той самий день."
+
+msgid "New Visit"
+msgstr "Новий візит"
+
+msgid "Passport"
+msgstr "Паспорт"
+
+msgid "Age"
+msgstr "Вік"
+
+msgid "Birthday"
+msgstr "Дата народження"
+
+msgid "Contact Person"
+msgstr "Контактна особа"
+
+msgid "Print Doctor Report"
+msgstr "Друкувати звіт лікаря"
+
+msgid "Print Diagnosis Report"
+msgstr "Друкувати звіт по діагнозах"
+
+msgid "Diagnosis Report"
+msgstr "Звіт по діагнозах"
+
+msgid "Doctor Report"
+msgstr "Звіт лікаря"
+
+msgid "Medical Specialty"
+msgstr "Медична спеціальність"
+
+msgid "Abstract Person"
+msgstr "Абстрактна особа"
+
+msgid "Male"
+msgstr "Чоловік"
+
+msgid "Female"
+msgstr "Жінка"
+
+msgid "Photo"
+msgstr "Фото"
+
+msgid "Planned Visit Date"
+msgstr "Запланована дата візиту"
+
+msgid "Actual Date"
+msgstr "Фактична дата"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Smart Button"
+msgstr "Смарт-кнопка"
+
+msgid "Interns"
+msgstr "Інтерни"
+
+msgid "Mentor Doctor"
+msgstr "Лікар-ментор"
+
+msgid "Diagnosis Count"
+msgstr "Кількість діагнозів"
+
+msgid "Disease Category"
+msgstr "Категорія хвороби"
+
+msgid "Visits History"
+msgstr "Історія відвідувань"

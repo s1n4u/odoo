@@ -8,6 +8,35 @@ class Visit(models.Model):
     _name = 'hr.hospital.visit'
     _description = 'Patient Visit'
 
+    def _check_access(self, operation):
+        user = self.env.user
+        if user.has_group('hr_hospital.group_admin') or user.has_group('hr_hospital.group_manager'):
+            return
+        for rec in self:
+            # Пацієнт: тільки свої візити
+            if user.has_group('hr_hospital.group_patient') and rec.patient_id.user_id != user:
+                raise models.AccessError('Доступ заборонено: можна переглядати лише свої візити.')
+            # Інтерн: тільки свої візити
+            if user.has_group('hr_hospital.group_intern') and rec.doctor_id.user_id != user:
+                raise models.AccessError('Доступ заборонено: можна працювати лише зі своїми візитами.')
+            # Лікар: свої та інтернів
+            if user.has_group('hr_hospital.group_doctor') and not (
+                rec.doctor_id.user_id == user or (rec.doctor_id.mentor_id and rec.doctor_id.mentor_id.user_id == user)
+            ):
+                raise models.AccessError('Доступ заборонено: можна працювати лише зі своїми візитами або візитами інтернів.')
+
+    def read(self, fields=None, load='_classic_read'):
+        self._check_access('read')
+        return super().read(fields=fields, load=load)
+
+    def write(self, vals):
+        self._check_access('write')
+        return super().write(vals)
+
+    def unlink(self):
+        self._check_access('unlink')
+        return super().unlink()
+
     status = fields.Selection([
         ('planned', 'Planned'),
         ('done', 'Done'),

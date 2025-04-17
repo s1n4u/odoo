@@ -8,8 +8,9 @@
     'version': '17.0.2.2.0',
     'depends': ['base'],
     'data': [
-
+        'security/hr_hospital_groups.xml',
         'security/ir.model.access.csv',
+        'security/visit_rule.xml',
         'views/doctor_report.xml',
         'wizard/diagnosis_report_wizard_view.xml',
 
