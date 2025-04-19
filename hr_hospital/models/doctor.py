@@ -5,6 +5,12 @@ from odoo.tools.translate import _
 class Doctor(models.Model):
     _name = 'hr.hospital.doctor'
     _inherit = 'hr.hospital.person'
+
+    user_id = fields.Many2one(
+        comodel_name='res.users',
+        string='User',
+        help='Odoo user associated with this doctor (for access control)'
+    )
     _description = 'Doctor'
 
     specialty_id = fields.Many2one(

@@ -11,11 +11,13 @@
         'security/hr_hospital_groups.xml',
         'security/ir.model.access.csv',
         'security/visit_rule.xml',
+        'security/patient_rule.xml',
         'views/doctor_report.xml',
         'wizard/diagnosis_report_wizard_view.xml',
 
         'data/disease_demo.xml',
         'data/demo_specialties.xml',
+        'data/demo_users.xml',
         'data/demo_persons.xml',
         'data/visit_demo.xml',
 

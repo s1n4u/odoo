@@ -1,0 +1,21 @@
+<odoo>
+
+    <!-- Partners -->
+    <record id="partner_patient_1" model="res.partner">
+        <field name="name">Oleg Kovalenko</field>
+    </record>
+    <record id="partner_patient_2" model="res.partner">
+        <field name="name">Elena Bondarenko</field>
+    </record>
+    <record id="partner_patient_3" model="res.partner">
+        <field name="name">Maksym Shevchenko</field>
+    </record>
+    <record id="partner_patient_4" model="res.partner">
+        <field name="name">Iryna Melnyk</field>
+    </record>
+    <record id="partner_patient_5" model="res.partner">
+        <field name="name">Andrii Tkachenko</field>
+    </record>
+
+</odoo>
+

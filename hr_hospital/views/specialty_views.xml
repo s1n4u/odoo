@@ -14,7 +14,9 @@
         <field name="model">hr.hospital.specialty</field>
         <field name="arch" type="xml">
             <form>
+                <form>
                 <field name="name"/>
+            </form>
             </form>
         </field>
     </record>

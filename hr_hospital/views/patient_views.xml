@@ -9,6 +9,7 @@
                 <field name="first_name"/>
                 <field name="last_name"/>
                 <field name="doctor_id"/>
+                <field name="user_id"/>
                 <field name="age"/>
             </tree>
         </field>
@@ -33,6 +34,7 @@
                         <field name="phone"/>
                         <field name="contact_person"/>
                         <field name="doctor_id"/>
+                        <field name="user_id"/>
                     </group>
                     </group>
                 </sheet>

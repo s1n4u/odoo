@@ -47,6 +47,7 @@
                         <field name="last_name"/>
                         <field name="phone"/>
                         <field name="gender"/>
+                        <field name="user_id"/>
                     </group>
 
                     <group string="Professional Info" colspan="2">

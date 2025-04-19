@@ -3,30 +3,30 @@
     <data noupdate="1">
         <!-- Patient group -->
         <record id="group_patient" model="res.groups">
-            <field name="name">Пацієнт</field>
+            <field name="name">Patient</field>
             <field name="category_id" ref="base.module_category_human_resources"/>
         </record>
         <!-- Intern inherits Patient -->
         <record id="group_intern" model="res.groups">
-            <field name="name">Інтерн</field>
+            <field name="name">Intern</field>
             <field name="implied_ids" eval="[(4, ref('hr_hospital.group_patient'))]"/>
             <field name="category_id" ref="base.module_category_human_resources"/>
         </record>
         <!-- Doctor inherits Intern -->
         <record id="group_doctor" model="res.groups">
-            <field name="name">Лікар</field>
+            <field name="name">Doctor</field>
             <field name="implied_ids" eval="[(4, ref('hr_hospital.group_intern'))]"/>
             <field name="category_id" ref="base.module_category_human_resources"/>
         </record>
         <!-- Manager inherits Doctor -->
         <record id="group_manager" model="res.groups">
-            <field name="name">Менеджер</field>
+            <field name="name">Manager</field>
             <field name="implied_ids" eval="[(4, ref('hr_hospital.group_doctor'))]"/>
             <field name="category_id" ref="base.module_category_human_resources"/>
         </record>
         <!-- Administrator inherits Manager -->
         <record id="group_admin" model="res.groups">
-            <field name="name">Адміністратор</field>
+            <field name="name">Administrator</field>
             <field name="implied_ids" eval="[(4, ref('hr_hospital.group_manager'))]"/>
             <field name="category_id" ref="base.module_category_human_resources"/>
         </record>
