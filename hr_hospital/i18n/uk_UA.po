@@ -444,9 +444,6 @@ msgstr "Паспорт"
 #: model:ir.model,name:hr_hospital.model_hr_hospital_patient
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_set_personal_doctor_wizard__patient_ids
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_visit__patient_id
-{{ ... }}
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_set_personal_doctor_wizard__patient_ids
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_visit__patient_id
 #: model:res.groups,name:hr_hospital.group_patient
 #: model_terms:ir.ui.view,arch_db:hr_hospital.view_patient_form
 msgid "Patient"
@@ -457,11 +454,6 @@ msgstr "Пацієнт"
 msgid "Patient Visit"
 msgstr "Відвідування пацієнта"
 
-#. module: hr_hospital
-#: model:ir.actions.act_window,name:hr_hospital.action_patient
-#: model:ir.ui.menu,name:hr_hospital.menu_hr_hospital_patient
-#: model_terms:ir.ui.view,arch_db:hr_hospital.report_doctor_template
-{{ ... }}
 #. module: hr_hospital
 #: model:ir.actions.act_window,name:hr_hospital.action_patient
 #: model:ir.ui.menu,name:hr_hospital.menu_hr_hospital_patient
@@ -483,10 +475,6 @@ msgstr "Особиста інформація"
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__phone
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__phone
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_person__phone
-{{ ... }}
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__phone
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__phone
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_person__phone
 #: model_terms:ir.ui.view,arch_db:hr_hospital.report_doctor_template
 msgid "Phone"
 msgstr "Телефон"
@@ -495,19 +483,8 @@ msgstr "Телефон"
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__image_1920
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__image_1920
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_person__image_1920
-{{ ... }}
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__image_1920
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__image_1920
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_person__image_1920
 msgid "Photo"
 msgstr "Фото"
-
-#. module: hr_hospital
-#: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_visit__status__planned
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_visit_search
-msgid "Planned"
-{{ ... }}
 
 #. module: hr_hospital
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_visit__status__planned
@@ -559,12 +536,6 @@ msgstr "Майстер призначення персонального лік�
 #: model:ir.actions.act_window,name:hr_hospital.action_specialty
 #: model:ir.ui.menu,name:hr_hospital.menu_hr_hospital_specialty
 msgid "Specialties"
-{{ ... }}
-
-#. module: hr_hospital
-#: model:ir.actions.act_window,name:hr_hospital.action_specialty
-#: model:ir.ui.menu,name:hr_hospital.menu_hr_hospital_specialty
-msgid "Specialties"
 msgstr "Спеціальності"
 
 #. module: hr_hospital
@@ -572,11 +543,6 @@ msgstr "Спеціальності"
 msgid "Specialty"
 msgstr "Спеціальність"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_visit__status
-#: model_terms:ir.ui.view,arch_db:hr_hospital.report_doctor_template
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_visit_search
-{{ ... }}
 #. module: hr_hospital
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_visit__status
 #: model_terms:ir.ui.view,arch_db:hr_hospital.report_doctor_template
@@ -615,12 +581,6 @@ msgstr "Опис лікування"
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__user_id
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__user_id
 msgid "User"
-{{ ... }}
-
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__user_id
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__user_id
-msgid "User"
 msgstr "Користувач"
 
 #. module: hr_hospital
@@ -647,7 +607,6 @@ msgstr "Дата візиту"
 #: model:ir.actions.act_window,name:hr_hospital.action_visit
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__visit_ids
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__visits_ids
-{{ ... }}
 #: model_terms:ir.ui.view,arch_db:hr_hospital.view_patient_form
 msgid "Visits"
 msgstr "Візити"
