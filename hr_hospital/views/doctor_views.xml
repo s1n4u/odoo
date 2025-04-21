@@ -4,6 +4,7 @@
         <field name="model">hr.hospital.doctor</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="image_1920" widget="image"/>
                 <field name="first_name"/>
                 <field name="last_name"/>
                 <field name="specialty_id"/>
@@ -43,13 +44,17 @@
 
                 <sheet>
                     <group string="Personal Info" colspan="2">
-                        <field name="first_name"/>
-                        <field name="last_name"/>
-                        <field name="phone"/>
-                        <field name="gender"/>
-                        <field name="user_id"/>
-                    </group>
-
+    <group>
+        <field name="first_name"/>
+        <field name="last_name"/>
+        <field name="phone"/>
+        <field name="gender"/>
+        <field name="user_id"/>
+    </group>
+    <group>
+        <field name="image_1920" widget="image" class="oe_avatar oe_right" options="{'preview_image': 'image_1920'}" style="max-width:300px;max-height:300px;"/>
+    </group>
+</group>
                     <group string="Professional Info" colspan="2">
                         <field name="specialty_id"/>
                         <field name="is_intern"/>
@@ -60,21 +65,24 @@
                         <page string="Interns">
                             <field name="intern_ids">
                                 <kanban>
-                                    <templates>
-                                        <t t-name="kanban-box">
-                                            <div>
-                                                <strong>
-                                                    <t t-esc="record.first_name.value"/>
-                                                    <t t-esc="record.last_name.value"/>
-                                                </strong>
-                                                <br/>
-                                                <span>
-                                                    <t t-esc="record.phone.value"/>
-                                                </span>
-                                            </div>
-                                        </t>
-                                    </templates>
-                                </kanban>
+    <templates>
+        <t t-name="kanban-box">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                    <strong>
+                        <t t-esc="record.first_name.value"/>
+                        <t t-esc="record.last_name.value"/>
+                    </strong>
+                    <br/>
+                    <span>
+                        <t t-esc="record.phone.value"/>
+                    </span>
+                </div>
+                <field name="image_1920" widget="image" class="oe_avatar oe_right" options="{'preview_image': 'image_1920'}" style="max-width:48px;max-height:48px; margin-left: 8px;"/>
+            </div>
+        </t>
+    </templates>
+</kanban>
                             </field>
                         </page>
                     </notebook>
@@ -87,52 +95,29 @@
         <field name="name">hr.hospital.doctor.kanban</field>
         <field name="model">hr.hospital.doctor</field>
         <field name="arch" type="xml">
-            <kanban class="o_kanban_example" quick_create="false"
-                    default_group_by="specialty_id">
-                <field name="id"/>
-                <field name="first_name"/>
-                <field name="last_name"/>
-                <field name="phone"/>
-                <field name="gender"/>
-                <field name="is_intern"/>
-                <field name="specialty_id"/>
-                <templates>
-                    <t t-name="kanban-box">
-                        <div class="oe_kanban_global_click">
-                            <div class="o_kanban_card_header">
-                                <strong>
-                                    <t t-esc="record.first_name.value"/>
-                                    <t t-esc="record.last_name.value"/>
-                                </strong>
-                            </div>
-                            <div class="o_kanban_details">
-                                <div>
-                                    <strong>Phone:</strong>
-                                    <t t-esc="record.phone.value"/>
-                                </div>
-                                <div>
-                                    <strong>Gender:</strong>
-                                    <t t-esc="record.gender.value"/>
-                                </div>
-                                <div>
-                                    <strong>Intern:</strong>
-                                    <t t-if="record.is_intern.raw_value">✅</t>
-                                    <t t-if="!record.is_intern.raw_value">❌</t>
-                                </div>
-                                <div class="oe_kanban_footer_left"
-                                     style="margin-top: 8px;">
-                                    <button type="action"
-                                            name="hr_hospital.action_visit"
-                                            context="{'default_doctor_id': id}"
-                                            class="btn btn-primary btn-sm">
-                                        Create Visit
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </t>
-                </templates>
-            </kanban>
+            <kanban class="o_kanban_example" quick_create="false" default_group_by="specialty_id">
+    <templates>
+        <t t-name="kanban-box">
+            <div class="oe_kanban_global_click" style="display: flex; align-items: center; justify-content: space-between;">
+    <div>
+        <strong><t t-esc="record.first_name.value"/> <t t-esc="record.last_name.value"/></strong><br/>
+        <span><t t-esc="record.phone.value"/></span><br/>
+        <span><strong>Gender:</strong> <t t-esc="record.gender.value"/></span><br/>
+        <span><strong>Intern:</strong> <t t-if="record.is_intern.raw_value">✅</t><t t-if="!record.is_intern.raw_value">❌</t></span><br/>
+        <span><strong>Specialty:</strong> <t t-esc="record.specialty_id.value"/></span>
+    </div>
+    <field name="image_1920" widget="image" class="oe_avatar oe_right" options="{'preview_image': 'image_1920'}" style="max-width:300px;max-height:300px;"/>
+</div>
+        </t>
+    </templates>
+    <field name="id"/>
+    <field name="first_name"/>
+    <field name="last_name"/>
+    <field name="phone"/>
+    <field name="gender"/>
+    <field name="is_intern"/>
+    <field name="specialty_id"/>
+</kanban>
         </field>
     </record>
 

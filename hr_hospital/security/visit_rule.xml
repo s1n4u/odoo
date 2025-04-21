@@ -15,7 +15,7 @@
     <record id="visit_rule_intern" model="ir.rule">
         <field name="name">Visit: intern can see only own</field>
         <field name="model_id" ref="hr_hospital.model_hr_hospital_visit"/>
-        <field name="domain_force">[('doctor_id','=',user.id)]</field>
+        <field name="domain_force">[('doctor_id.user_id','=',user.id)]</field>
         <field name="groups" eval="[(4, ref('hr_hospital.group_intern'))]"/>
         <field name="perm_read" eval="True"/>
         <field name="perm_write" eval="True"/>
