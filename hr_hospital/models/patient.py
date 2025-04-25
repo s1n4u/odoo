@@ -12,7 +12,7 @@ class Patient(models.Model):
         string='Personal Doctor',
     )
     user_id = fields.Many2one(
-        comodel_name='res.users',
+        comodel_name='res.partner',
         string='User',
         help='Odoo user associated with this patient (for portal access)'
     )

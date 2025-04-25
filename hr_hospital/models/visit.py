@@ -8,42 +8,11 @@ class Visit(models.Model):
     _name = 'hr.hospital.visit'
     _description = 'Patient Visit'
 
-    def _check_access(self, operation):
-        user = self.env.user
-        if user.has_group('hr_hospital.group_admin') or user.has_group('hr_hospital.group_manager'):
-            return
-        for rec in self:
-            # Пацієнт: тільки свої візити
-            if user.has_group('hr_hospital.group_patient') and rec.patient_id.user_id != user:
-                raise models.AccessError('Доступ заборонено: можна переглядати лише свої візити.')
-            # Інтерн: тільки свої візити
-            if user.has_group('hr_hospital.group_intern') and rec.doctor_id.user_id != user:
-                raise models.AccessError('Доступ заборонено: можна працювати лише зі своїми візитами.')
-            # Лікар: свої та інтернів
-            if user.has_group('hr_hospital.group_doctor') and not (
-                rec.doctor_id.user_id == user or (rec.doctor_id.mentor_id and rec.doctor_id.mentor_id.user_id == user)
-            ):
-                raise models.AccessError('Доступ заборонено: можна працювати лише зі своїми візитами або візитами інтернів.')
-
-    def read(self, fields=None, load='_classic_read'):
-        self._check_access('read')
-        return super().read(fields=fields, load=load)
-
-    def write(self, vals):
-        self._check_access('write')
-        return super().write(vals)
-
-    def unlink(self):
-        self._check_access('unlink')
-        return super().unlink()
-
     status = fields.Selection([
         ('planned', 'Planned'),
         ('done', 'Done'),
         ('cancelled', 'Cancelled'),
-    ],
-        default='planned',
-    )
+    ], default='planned')
 
     actual_datetime = fields.Datetime(
         string='Actual Date',
@@ -52,9 +21,11 @@ class Visit(models.Model):
     planned_datetime = fields.Datetime(
         string='Planned Visit Date',
     )
+
     doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        string='Doctor', required=True,
+        string='Doctor',
+        required=True,
     )
     patient_id = fields.Many2one(
         comodel_name='hr.hospital.patient',
@@ -67,15 +38,23 @@ class Visit(models.Model):
         string='Diagnoses',
     )
 
+    def unlink(self):
+        for record in self:
+            if record.diagnosis_ids:
+                raise ValidationError(_(
+                    "You cannot delete a visit with diagnoses."
+                ))
+        return super().unlink()
+
     @api.constrains('doctor_id', 'patient_id', 'planned_datetime')
     def _check_unique_visit(self):
         for record in self:
             if record.planned_datetime:
                 visit_day = record.planned_datetime.date()
-                start_of_day = fields.Datetime.from_string(
-                    f"{visit_day} 00:00:00")
-                end_of_day = fields.Datetime.from_string(
-                    f"{visit_day} 23:59:59")
+                start_of_day = (
+                    fields.Datetime.from_string(f"{visit_day} 00:00:00"))
+                end_of_day = (
+                    fields.Datetime.from_string(f"{visit_day} 23:59:59"))
 
                 existing = self.search([
                     ('id', '!=', record.id),
@@ -87,7 +66,7 @@ class Visit(models.Model):
 
                 if existing:
                     raise ValidationError(_(
-                        "This patient already has a visit with this doctor "
+                        "This patient already has a visit with this doctor"
                         "on the same day."
                     ))
 
@@ -107,13 +86,6 @@ class Visit(models.Model):
 
                 if overlapping:
                     raise ValidationError(_(
-                        "This doctor already has an appointment within "
-                        "2 hours of the selected time."
+                        "This doctor already has an appointment within 2 hours"
+                        "of the selected time."
                     ))
-
-    def unlink(self):
-        for record in self:
-            if record.diagnosis_ids:
-                raise ValidationError(_(
-                    "You cannot delete a visit with diagnoses."))
-        return super().unlink()

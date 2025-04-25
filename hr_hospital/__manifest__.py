@@ -17,9 +17,9 @@
 
         'data/disease_demo.xml',
         'data/demo_specialties.xml',
-        'data/demo_users.xml',
-        'data/demo_persons.xml',
-        'data/visit_demo.xml',
+#        'data/demo_users.xml',
+#        'data/demo_persons.xml',
+#        'data/visit_demo.xml',
 
         'views/person_views.xml',
         'views/disease_views.xml',

@@ -9,7 +9,8 @@ class Doctor(models.Model):
     user_id = fields.Many2one(
         comodel_name='res.users',
         string='User',
-        help='Odoo user associated with this doctor (for access control)'
+        required=True,
+        tracking=True,
     )
     _description = 'Doctor'
 
@@ -23,6 +24,7 @@ class Doctor(models.Model):
     mentor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
         string='Mentor',
+        domain=[('is_intern', '=', False)],
     )
 
     intern_ids = fields.One2many(

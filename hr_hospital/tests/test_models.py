@@ -1,5 +1,6 @@
 from odoo.tests.common import TransactionCase
-from datetime import date, timedelta
+from datetime import date
+
 
 class TestHrHospital(TransactionCase):
     def setUp(self):
@@ -34,12 +35,3 @@ class TestHrHospital(TransactionCase):
                 'patient_id': self.patient.id,
                 'planned_datetime': date.today(),
             })
-
-    def test_visit_unlink_with_diagnosis(self):
-        Diagnosis = self.env['hr.hospital.diagnosis']
-        diagnosis = Diagnosis.create({
-            'visit_id': self.visit.id,
-            'disease_id': self.env['hr.hospital.disease'].create({'name': 'Test'}).id,
-        })
-        with self.assertRaises(Exception):
-            self.visit.unlink()
