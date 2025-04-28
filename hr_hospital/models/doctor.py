@@ -9,7 +9,7 @@ class Doctor(models.Model):
     user_id = fields.Many2one(
         comodel_name='res.users',
         string='User',
-        required=True,
+        required=False,
         tracking=True,
     )
     _description = 'Doctor'
@@ -40,7 +40,7 @@ class Doctor(models.Model):
     )
 
     company_id = fields.Many2one(
-        'res.company',
+        comodel_name='res.company',
         string="Company",
         default=lambda self: self.env.company,
         readonly=True
