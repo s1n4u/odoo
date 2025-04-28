@@ -22,15 +22,22 @@
             <form string="Пациент">
                 <sheet>
                     <group>
-                        <field name="image" widget="image" class="oe_avatar" options="{'preview_image': 'image'}"/>
-                        <field name="name"/>
-                        <field name="species"/>
-                        <field name="breed"/>
-                        <field name="birth_date"/>
-                        <field name="owner_id"/>
-                        <field name="notes"/>
+                        <group>
+                            <field name="name"/>
+                            <field name="species"/>
+                            <field name="breed"/>
+                            <field name="birth_date"/>
+                            <field name="owner_email"/>
+                            <field name="owner_id"/>
+                            <field name="notes"/>
+                        </group>
+                    <group>
+                        <field name="image" widget='image' class="oe_avatar m-0"
+                               options='{"zoom": true, "preview_image":"avatar_256"}'/>
                     </group>
-                </sheet>
+
+                    </group>
+                                    </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids" widget="mail_followers"/>
                     <field name="activity_ids" widget="mail_activity"/>

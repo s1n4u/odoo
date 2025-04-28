@@ -16,7 +16,7 @@
     },
 
     'data': [
-
+        'security/security.xml',
         'security/ir.model.access.csv',
         'views/vet_patient_views.xml',
         'views/vet_doctor_views.xml',

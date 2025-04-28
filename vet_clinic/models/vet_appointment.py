@@ -6,11 +6,11 @@ class VetAppointment(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _rec_name = 'appointment_date'
 
-    patient_id = fields.Many2one('vet.patient', string='Пациент', required=True, tracking=True)
-    doctor_id = fields.Many2one('vet.doctor', string='Ветеринар', required=True, tracking=True)
+    patient_id = fields.Many2one(comodel_name='vet.patient', string='Пациент', required=True, tracking=True)
+    doctor_id = fields.Many2one(comodel_name='vet.doctor', string='Ветеринар', required=True, tracking=True)
     appointment_date = fields.Datetime(string='Дата и время приема', required=True, tracking=True)
     reason = fields.Char(string='Причина обращения', tracking=True)
-    state = fields.Selection([
+    state = fields.Selection(selection=[
         ('planned', 'Запланировано'),
         ('done', 'Завершено'),
         ('canceled', 'Отменено')

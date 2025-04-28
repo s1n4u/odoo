@@ -6,7 +6,6 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
-                <field name="specialization"/>
                 <field name="phone"/>
                 <field name="email"/>
                 <field name="experience_years"/>
@@ -21,12 +20,13 @@
             <form string="Ветеринарный врач">
                 <sheet>
                     <group>
+                        <field name="user_id"/>
                         <field name="name"/>
-                        <field name="specialization"/>
                         <field name="experience_years"/>
                         <field name="phone"/>
                         <field name="email"/>
                         <field name="notes"/>
+
                     </group>
                 </sheet>
                 <div class="oe_chatter">

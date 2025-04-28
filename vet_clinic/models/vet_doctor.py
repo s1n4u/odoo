@@ -1,13 +1,37 @@
 from odoo import models, fields
 
+
+
 class VetDoctor(models.Model):
     _name = 'vet.doctor'
     _description = 'Veterinary Doctor'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    name = fields.Char(string='Имя врача', required=True, tracking=True)
-    specialization = fields.Char(string='Специализация', tracking=True)
-    phone = fields.Char(string='Телефон', tracking=True)
-    email = fields.Char(string='Email', tracking=True)
+    user_id = fields.Many2one(
+        comodel_name='res.users',
+        string='User',
+        required=False,
+        tracking=False,
+    )
+
+    name = fields.Char(
+        string='Name',
+        related='user_id.name',
+        store=True,  # если хочешь, чтобы поле хранилось в базе
+        readonly=False,  # если хочешь разрешить редактировать
+    )
+    phone = fields.Char(
+        string='Phone',
+        related='user_id.partner_id.phone',
+        store=True,
+        readonly=False,
+    )
+    email = fields.Char(
+        string='Email',
+        related='user_id.partner_id.email',
+        store=True,
+        readonly=False,
+    )
     experience_years = fields.Integer(string='Опыт работы (лет)', tracking=True)
     notes = fields.Text(string='Заметки')
+
