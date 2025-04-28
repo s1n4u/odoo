@@ -20,13 +20,11 @@ class VetDiagnosis(models.Model):
 
         partner_ids = []
 
-        # Добавляем владельца пациента через patient_id.owner_id
         if diagnosis.patient_id and diagnosis.patient_id.owner_id:
             partner_ids.append(diagnosis.patient_id.owner_id.id)
 
-        # Добавляем всех пользователей из группы ветеринаров
         vet_group = self.env.ref('vet_clinic.group_vet_admin',
-                                 raise_if_not_found=False)  # поправь если нужно
+                                 raise_if_not_found=False)
 
         if vet_group:
             vet_users = vet_group.users

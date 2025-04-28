@@ -40,16 +40,14 @@ class VetPatient(models.Model):
 
         partner_ids = []
 
-        # Добавляем владельца
         if patient.owner_id:
             partner_ids.append(patient.owner_id.id)
 
-        # Добавляем всех пользователей из группы ветеринаров
-        vet_group = self.env.ref('hr_hospital.group_vet_admin', raise_if_not_found=False)  # <-- Укажи тут свой модуль и ID группы
+        vet_group = self.env.ref('hr_hospital.group_vet_admin', raise_if_not_found=False)
 
         if vet_group:
-            vet_users = vet_group.users  # Это пользователи (res.users)
-            vet_partners = vet_users.mapped('partner_id')  # Достаём их партнёров
+            vet_users = vet_group.users
+            vet_partners = vet_users.mapped('partner_id')
             partner_ids += vet_partners.ids
 
         if partner_ids:
