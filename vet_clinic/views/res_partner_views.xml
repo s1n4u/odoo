@@ -11,8 +11,8 @@
                         <tree>
                             <field name="name"/>
                             <field name="gender"/>
-                            <field name="species"/>
-                            <field name="breed"/>
+                            <field name="species_id"/>
+                            <field name="breed_id"/>
                             <field name="birthday"/>
                         </tree>
                     </field>

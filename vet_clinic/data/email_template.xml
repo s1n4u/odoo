@@ -1,0 +1,17 @@
+<odoo>
+  <record id="email_template_pet_birthday" model="mail.template">
+    <field name="name">Поздравление с днём рождения питомца</field>
+    <field name="model_id" ref="vet_clinic.model_vet_patient"/>
+    <field name="subject">С днём рождения, ${object.name}!</field>
+    <field name="email_from">${(user.email or 'admin@yourcompany.example.com')|safe}</field>
+    <field name="email_to">${object.owner_id.email}</field>
+    <field name="body_html">
+        <![CDATA[
+      <p>Здравствуйте, ${object.owner_id.name}!</p>
+      <p>Сегодня день рождения у вашего любимца <strong>${object.name}</strong>! 🎉</p>
+      <p>Поздравляем и дарим вам <strong>скидку 20%</strong> на следующий приём в течение 30 дней!</p>
+      <p>С уважением,<br/>Ваша ветеринарная клиника</p>
+        ]]>
+    </field>
+  </record>
+</odoo>

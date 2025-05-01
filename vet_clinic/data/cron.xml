@@ -1,0 +1,12 @@
+<odoo>
+  <record id="cron_pet_birthday_check" model="ir.cron">
+    <field name="name">Check Pet Birthdays</field>
+    <field name="model_id" ref="vet_clinic.model_vet_patient"/>
+    <field name="state">code</field>
+    <field name="code">model._check_birthdays_and_send_emails()</field>
+    <field name="interval_number">1</field>
+    <field name="interval_type">days</field>
+    <field name="numbercall">-1</field>
+    <field name="active">True</field>
+  </record>
+</odoo>

@@ -7,13 +7,12 @@ class VetPatient(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string='Имя животного', required=True, tracking=True)
-    species = fields.Selection(selection=[
-        ('dog', 'Собака'),
-        ('cat', 'Кошка'),
-        ('bird', 'Птица'),
-        ('other', 'Другое'),
-    ], string='Вид', required=True, tracking=True)
-    breed = fields.Char(string='Порода', tracking=True)
+    species_id = fields.Many2one(comodel_name='vet.species', string='Вид', required=True)
+    breed_id = fields.Many2one(
+        comodel_name='vet.breed',
+        string='Порода',
+        domain="[('species_id', '=', species_id)]",
+    )
     birthday = fields.Date(string='Дата рождения', tracking=True)
     age = fields.Integer(
         compute='_compute_age',
@@ -93,3 +92,13 @@ class VetPatient(models.Model):
                 record.age = age
             else:
                 record.age = 0
+
+    @api.model
+    def _check_birthdays_and_send_emails(self):
+        today = date.today()
+        patients = self.search([('birthday', '!=', False)])
+        for pet in patients:
+            if pet.birthday and pet.birthday.month == today.month and pet.birthday.day == today.day:
+                template = self.env.ref('vet_clinic.email_template_pet_birthday', raise_if_not_found=False)
+                if template and pet.owner_id.email:
+                    template.send_mail(pet.id, force_send=True)

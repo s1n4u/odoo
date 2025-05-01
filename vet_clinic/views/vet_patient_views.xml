@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+
+    <record id="vet_patient_search_view" model="ir.ui.view">
+      <field name="name">vet.patient.search</field>
+      <field name="model">vet.patient</field>
+      <field name="arch" type="xml">
+        <search string="Birthdays">
+    <filter
+        name="birthday_today"
+        string="Birthday today"
+        domain="[
+            ('birthday', '!=', False),
+            ('birthday', 'like', (context_today().strftime('%%-%m-%d')))
+        ]"
+    />
+        </search>
+      </field>
+    </record>
+
     <record id="vet_patient_tree_view" model="ir.ui.view">
         <field name="name">vet.patient.tree</field>
         <field name="model">vet.patient</field>
@@ -7,13 +25,14 @@
             <tree>
                 <field name="image" widget="image" class="oe_avatar"/>
                 <field name="name"/>
-                <field name="species"/>
-                <field name="breed"/>
+                <field name="species_id"/>
+                <field name="breed_id"/>
                 <field name="birthday"/>
                 <field name="owner_id"/>
             </tree>
         </field>
     </record>
+
 
     <record id="vet_patient_form_view" model="ir.ui.view">
         <field name="name">vet.patient.form</field>
@@ -31,8 +50,8 @@
                     <group>
                         <group>
                             <field name="name"/>
-                            <field name="species"/>
-                            <field name="breed"/>
+                            <field name="species_id"/>
+                            <field name="breed_id"/>
                             <field name="birthday"/>
                             <field name="gender"/>
                             <field name="age"/>
@@ -60,7 +79,7 @@
         <field name="name">vet.patient.kanban</field>
         <field name="model">vet.patient</field>
         <field name="arch" type="xml">
-            <kanban class="o_kanban_example" quick_create="false" default_group_by="species">
+            <kanban class="o_kanban_example" quick_create="false" default_group_by="species_id">
                 <templates>
                     <t t-name="kanban-box">
                     <div class="oe_kanban_global_click" style="display: flex; align-items: center; justify-content: space-between;">
@@ -75,8 +94,8 @@
                     </t>
                 </templates>
                 <field name="name"/>
-                <field name="species"/>
-                <field name="breed"/>
+                <field name="species_id"/>
+                <field name="breed_id"/>
                 <field name="birthday"/>
                 <field name="age"/>
                 <field name="gender"/>
@@ -87,11 +106,14 @@
         </field>
     </record>
 
+
+
     <record id="action_vet_patient" model="ir.actions.act_window">
         <field name="name">Пациенты</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">vet.patient</field>
         <field name="view_mode">tree,form,kanban</field>
+        <field name="search_view_id" ref="vet_patient_search_view"/>
     </record>
 
 </odoo>

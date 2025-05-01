@@ -13,5 +13,9 @@ access_quick_appointment_wizard_user,quick.appointment.wizard user,model_quick_a
 access_quick_appointment_wizard_admin,quick.appointment.wizard admin,model_quick_appointment_wizard,vet_clinic.group_vet_admin,1,1,1,1
 access_vet_disease_user,vet.disease.user,model_vet_disease,vet_clinic.group_vet_user,1,1,1,0
 access_vet_disease_admin,vet.disease.admin,model_vet_disease,vet_clinic.group_vet_admin,1,1,1,1
+access_vet_species_user,vet.species user,model_vet_species,vet_clinic.group_vet_user,1,1,1,0
+access_vet_species_admin,vet.species admin,model_vet_species,vet_clinic.group_vet_admin,1,1,1,1
+access_vet_breed_user,vet.breed user,model_vet_breed,vet_clinic.group_vet_user,1,1,1,0
+access_vet_breed_admin,vet.breed admin,model_vet_breed,vet_clinic.group_vet_admin,1,1,1,1
 
 

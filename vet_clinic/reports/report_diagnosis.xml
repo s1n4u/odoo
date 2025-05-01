@@ -1,37 +1,53 @@
 <odoo>
-  <template id="report_diagnosis">
-    <t t-call="web.html_container">
-    <t t-foreach="docs" t-as="VetDiagnosis">
-      <t t-call="web.external_layout">
-        <div class="page">
+    <template id="report_diagnosis">
+     <t t-call="web.html_container">
+      <t t-foreach="docs" t-as="doc">
+        <t t-call="web.external_layout">
+          <div class="page">
+            <h2 style="text-align: center; margin-bottom: 20px;">
+              Отчёт по диагнозу
+            </h2>
 
-          <h2 style="text-align: center; margin-bottom: 20px;">
-            Отчёт по диагнозу
-          </h2>
+            <p><strong>Пациент:</strong> <t t-esc="doc.patient_id.name"/></p>
+            <p><strong>Владелец:</strong> <t t-esc="doc.patient_id.owner_id.name"/></p>
+            <p><strong>Врач:</strong> <t t-esc="doc.doctor_id.name"/></p>
+            <p><strong>Дата диагноза:</strong> <t t-esc="doc.diagnosis_date"/></p>
 
-          <p><strong>Пациент:</strong> <t t-esc="VetDiagnosis.patient_id.name"/></p>
-          <p><strong>Владелец:</strong> <t t-esc="VetDiagnosis.patient_id.owner_id.name"/></p>
-          <p><strong>Врач:</strong> <t t-esc="VetDiagnosis.doctor_id.name"/></p>
-          <p><strong>Дата диагноза:</strong> <t t-esc="VetDiagnosis.diagnosis_date"/></p>
-
-          <t t-if="VetDiagnosis.disease_id">
-            <p><strong>Заболевание:</strong> <t t-esc="VetDiagnosis.disease_id.name"/></p>
-            <t t-if="VetDiagnosis.disease_id.description">
-              <p><strong>Описание заболевания:</strong></p>
-              <p t-esc="VetDiagnosis.disease_id.description"/>
+            <t t-if="doc.disease_id">
+              <p><strong>Заболевание:</strong> <t t-esc="doc.disease_id.name"/></p>
+              <t t-if="doc.disease_id.description">
+                <p><strong>Описание заболевания:</strong></p>
+                <p t-esc="doc.disease_id.description"/>
+              </t>
             </t>
-          </t>
 
-          <hr style="margin: 20px 0;"/>
+            <hr style="margin: 20px 0;"/>
 
-          <t t-if="VetDiagnosis.recommendations">
-            <p><strong>Рекомендации:</strong></p>
-            <p t-esc="VetDiagnosis.recommendations"/>
-          </t>
+            <t t-if="doc.treatment">
+              <p><strong>Лечение:</strong></p>
+              <p t-esc="doc.treatment"/>
+            </t>
 
-        </div>
+            <t t-if="doc.medicine_ids">
+              <p><strong>Назначенные медикаменты:</strong></p>
+              <ul>
+                <t t-foreach="doc.medicine_ids" t-as="med">
+                  <li>
+                    <t t-esc="med.display_name"/>
+                    <t t-if="med.medicine_form"> (<t t-esc="med.medicine_form"/>)</t>
+                  </li>
+                </t>
+              </ul>
+            </t>
+
+            <t t-if="doc.recommendations">
+              <p><strong>Рекомендации:</strong></p>
+              <p t-esc="doc.recommendations"/>
+            </t>
+
+          </div>
+        </t>
+       </t>
       </t>
-      </t>
-    </t>
-  </template>
+    </template>
 </odoo>

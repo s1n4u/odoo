@@ -9,7 +9,7 @@ class VetDiagnosis(models.Model):
     patient_id = fields.Many2one(comodel_name='vet.patient', string='Пациент', required=True, tracking=True)
     doctor_id = fields.Many2one(comodel_name='vet.doctor', string='Врач', required=True, tracking=True)
     diagnosis_date = fields.Date(string='Дата', default=fields.Date.today, required=True, tracking=True)
-    disease_id = fields.Many2one('vet.disease', string='Заболевание',
+    disease_id = fields.Many2one(comodel_name='vet.disease', string='Заболевание',
                                  tracking=True)
     treatment = fields.Text(string='Лечение', tracking=True)
     medicine_ids = fields.Many2many(comodel_name='vet.medicine', string='Медикаменты')

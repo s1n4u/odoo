@@ -7,7 +7,7 @@ class VetMedicine(models.Model):
 
     name = fields.Char(string='Название', required=True, tracking=True)
     manufacturer = fields.Char(string='Производитель', tracking=True)
-    medicine_form = fields.Selection([
+    medicine_form = fields.Selection(selection=[
         ('tablet', 'Таблетки'),
         ('capsule', 'Капсулы'),
         ('liquid', 'Жидкость'),
