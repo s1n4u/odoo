@@ -1,0 +1,19 @@
+<odoo>
+    <record id="email_template_pet_birthday" model="mail.template">
+        <field name="name">Pet Birthday Greeting</field>
+        <field name="model_id" ref="vet_clinic.model_vet_patient"/>
+        <field name="subject">Happy Birthday, ${object.name}!</field>
+        <field name="email_from">
+            ${(user.email or 'admin@yourcompany.example.com')|safe}
+        </field>
+        <field name="email_to">${object.owner_id.email}</field>
+        <field name="body_html">
+            <![CDATA[
+      <p>Hello, ${object.owner_id.name}!</p>
+      <p>Today is your beloved pet <strong>${object.name}</strong>'s birthday! 🎉</p>
+      <p>We congratulate you and offer a <strong>20% discount</strong> on your next visit within 30 days!</p>
+      <p>Best regards,<br/>Your veterinary clinic</p>
+        ]]>
+        </field>
+    </record>
+</odoo>

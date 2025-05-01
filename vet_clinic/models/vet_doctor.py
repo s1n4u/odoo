@@ -1,7 +1,6 @@
 from odoo import models, fields
 
 
-
 class VetDoctor(models.Model):
     _name = 'vet.doctor'
     _description = 'Veterinary Doctor'
@@ -17,8 +16,8 @@ class VetDoctor(models.Model):
     name = fields.Char(
         string='Name',
         related='user_id.name',
-        store=True,  # если хочешь, чтобы поле хранилось в базе
-        readonly=False,  # если хочешь разрешить редактировать
+        store=True,
+        readonly=False,
     )
     phone = fields.Char(
         string='Phone',
@@ -32,6 +31,6 @@ class VetDoctor(models.Model):
         store=True,
         readonly=False,
     )
-    experience_years = fields.Integer(string='Опыт работы (лет)', tracking=True)
-    notes = fields.Text(string='Заметки')
-
+    experience_years = fields.Integer(string='Years of Experience',
+                                      tracking=True)
+    notes = fields.Text()

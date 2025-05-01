@@ -6,13 +6,14 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <xpath expr="//sheet/notebook" position="inside">
-                <page string="Домашние животные">
+                <page string="Pets">
                     <field name="pet_ids">
                         <tree>
                             <field name="name"/>
-                            <field name="species"/>
-                            <field name="breed"/>
-                            <field name="birth_date"/>
+                            <field name="gender"/>
+                            <field name="species_id"/>
+                            <field name="breed_id"/>
+                            <field name="birthday"/>
                         </tree>
                     </field>
                 </page>

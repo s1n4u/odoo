@@ -1,0 +1,24 @@
+<odoo>
+
+    <record id="disease_tartar" model="vet.disease">
+        <field name="name">Dental Tartar</field>
+        <field name="description">A buildup of dental plaque and tartar on the
+            teeth, leading to bad breath and gum inflammation.
+        </field>
+    </record>
+
+    <record id="disease_viral_rhinitis" model="vet.disease">
+        <field name="name">Feline Viral Rhinitis</field>
+        <field name="description">Viral infection causing sneezing, nasal
+            discharge, and fatigue in cats. Often associated with herpesvirus.
+        </field>
+    </record>
+
+    <record id="disease_pbfd" model="vet.disease">
+        <field name="name">Psittacine Beak and Feather Disease</field>
+        <field name="description">A serious viral disease in parrots causing
+            feather loss, beak deformities, and immunosuppression.
+        </field>
+    </record>
+
+</odoo>

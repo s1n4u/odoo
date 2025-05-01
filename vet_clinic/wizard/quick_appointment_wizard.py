@@ -1,13 +1,12 @@
-# wizard/quick_appointment_wizard.py
-
 from odoo import models, fields
+
 
 class QuickAppointmentWizard(models.TransientModel):
     _name = 'quick.appointment.wizard'
-    _description = 'Wizard для быстрой записи на приём'
+    _description = 'Wizard for Quick Appointment Booking'
 
-    patient_id = fields.Many2one('vet.patient', required=True)
-    doctor_id = fields.Many2one('vet.doctor', required=True)
+    patient_id = fields.Many2one(comodel_name='vet.patient', required=True)
+    doctor_id = fields.Many2one(comodel_name='vet.doctor', required=True)
     appointment_date = fields.Datetime(required=True)
     reason = fields.Char()
 
