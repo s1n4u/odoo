@@ -8,7 +8,7 @@
                 <field name="diagnosis_date"/>
                 <field name="patient_id"/>
                 <field name="doctor_id"/>
-                <field name="diagnosis"/>
+                <field name="disease_id"/>
             </tree>
         </field>
     </record>
@@ -18,12 +18,15 @@
         <field name="model">vet.diagnosis</field>
         <field name="arch" type="xml">
             <form string="Диагноз и лечение">
+                <header>
+                    <button name="action_print_diagnosis" string="Печать" type="object" class="btn-primary"/>
+                </header>
                 <sheet>
                     <group>
                         <field name="diagnosis_date"/>
                         <field name="patient_id"/>
                         <field name="doctor_id"/>
-                        <field name="diagnosis"/>
+                        <field name="disease_id"/>
                         <field name="treatment"/>
                         <field name="medicine_ids" widget="many2many_tags"/>
                         <field name="recommendations"/>

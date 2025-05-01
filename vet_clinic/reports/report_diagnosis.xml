@@ -1,0 +1,37 @@
+<odoo>
+  <template id="report_diagnosis">
+    <t t-call="web.html_container">
+    <t t-foreach="docs" t-as="VetDiagnosis">
+      <t t-call="web.external_layout">
+        <div class="page">
+
+          <h2 style="text-align: center; margin-bottom: 20px;">
+            Отчёт по диагнозу
+          </h2>
+
+          <p><strong>Пациент:</strong> <t t-esc="VetDiagnosis.patient_id.name"/></p>
+          <p><strong>Владелец:</strong> <t t-esc="VetDiagnosis.patient_id.owner_id.name"/></p>
+          <p><strong>Врач:</strong> <t t-esc="VetDiagnosis.doctor_id.name"/></p>
+          <p><strong>Дата диагноза:</strong> <t t-esc="VetDiagnosis.diagnosis_date"/></p>
+
+          <t t-if="VetDiagnosis.disease_id">
+            <p><strong>Заболевание:</strong> <t t-esc="VetDiagnosis.disease_id.name"/></p>
+            <t t-if="VetDiagnosis.disease_id.description">
+              <p><strong>Описание заболевания:</strong></p>
+              <p t-esc="VetDiagnosis.disease_id.description"/>
+            </t>
+          </t>
+
+          <hr style="margin: 20px 0;"/>
+
+          <t t-if="VetDiagnosis.recommendations">
+            <p><strong>Рекомендации:</strong></p>
+            <p t-esc="VetDiagnosis.recommendations"/>
+          </t>
+
+        </div>
+      </t>
+      </t>
+    </t>
+  </template>
+</odoo>

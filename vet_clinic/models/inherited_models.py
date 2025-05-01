@@ -16,3 +16,10 @@ class ProductProduct(models.Model):
         ('ointment', 'Мазь'),
         ('other', 'Другое')
     ], string='Форма медикамента')
+
+    class VetDisease(models.Model):
+        _name = 'vet.disease'
+        _description = 'Заболевание'
+
+        name = fields.Char(required=True, string='Название')
+        description = fields.Text(string='Описание')

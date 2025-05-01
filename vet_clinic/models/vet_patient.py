@@ -1,3 +1,4 @@
+from datetime import date
 from odoo import models, fields, api
 
 class VetPatient(models.Model):
@@ -13,8 +14,17 @@ class VetPatient(models.Model):
         ('other', 'Другое'),
     ], string='Вид', required=True, tracking=True)
     breed = fields.Char(string='Порода', tracking=True)
-    birth_date = fields.Date(string='Дата рождения', tracking=True)
-    owner_id = fields.Many2one(comodel_name='res.partner', string='Владелец', required=True, tracking=True)
+    birthday = fields.Date(string='Дата рождения', tracking=True)
+    age = fields.Integer(
+        compute='_compute_age',
+        store=True,
+    )
+    owner_id = fields.Many2one(
+        comodel_name='res.partner',
+        string='Владелец',
+        required=True,
+        tracking=True,
+    )
     owner_email = fields.Char(
         comodel_name='res.partner',
         string='Email',
@@ -22,8 +32,25 @@ class VetPatient(models.Model):
         store=True,
         readonly=False,
     )
+    gender = fields.Selection([
+        ('male', 'Male'),
+        ('female', 'Female'),
+    ], )
     image = fields.Image(string='Фото')
     notes = fields.Text(string='Примечания')
+
+    def open_quick_appointment_wizard(self):
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Быстрая запись',
+            'res_model': 'quick.appointment.wizard',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {
+                'default_patient_id': self.id,
+            },
+        }
 
     @api.onchange('owner_email')
     def _onchange_owner_email(self):
@@ -37,13 +64,11 @@ class VetPatient(models.Model):
     @api.model
     def create(self, vals):
         patient = super(VetPatient, self).create(vals)
-
         partner_ids = []
-
         if patient.owner_id:
             partner_ids.append(patient.owner_id.id)
 
-        vet_group = self.env.ref('hr_hospital.group_vet_admin', raise_if_not_found=False)
+        vet_group = self.env.ref('vet_clinic.group_vet_admin', raise_if_not_found=False)
 
         if vet_group:
             vet_users = vet_group.users
@@ -54,3 +79,17 @@ class VetPatient(models.Model):
             patient.message_subscribe(partner_ids=partner_ids)
 
         return patient
+    @api.depends('birthday')
+    def _compute_age(self):
+        today = date.today()
+        for record in self:
+            if record.birthday:
+                age = today.year - record.birthday.year
+                if (
+                    (today.month, today.day) <
+                    (record.birthday.month, record.birthday.day)
+                ):
+                    age -= 1
+                record.age = age
+            else:
+                record.age = 0

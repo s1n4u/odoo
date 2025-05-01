@@ -1,3 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+
+    <!-- HTML-версия отчёта (просмотр) -->
+    <record id="vet_clinic_action_report_diagnosis_html" model="ir.actions.report">
+        <field name="name">Diagnosis Report (HTML)</field>
+        <field name="model">vet.diagnosis</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">vet_clinic.report_diagnosis</field>
+        <field name="report_file">vet_clinic.report_diagnosis</field>
+        <field name="binding_model_id" ref="vet_clinic.model_vet_diagnosis"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- PDF-версия отчёта -->
+    <record id="vet_diagnosis_report" model="ir.actions.report">
+        <field name="name">Diagnosis Report</field>
+        <field name="model">vet.diagnosis</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">vet_clinic.report_diagnosis</field>
+        <field name="report_file">vet_clinic.report_diagnosis</field>
+        <field name="binding_model_id" ref="vet_clinic.model_vet_diagnosis"/>
+        <field name="binding_type">report</field>
+    </record>
+
 </odoo>

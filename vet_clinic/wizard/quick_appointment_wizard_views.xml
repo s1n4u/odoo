@@ -9,6 +9,7 @@
                     <field name="patient_id"/>
                     <field name="doctor_id"/>
                     <field name="reason"/>
+                    <field name="appointment_date" widget="datetime" options="{'datepicker': true}"/>
                 </group>
                 <footer>
                     <button string="Создать приём"

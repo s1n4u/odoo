@@ -6,8 +6,8 @@ class QuickAppointmentWizard(models.TransientModel):
     _name = 'quick.appointment.wizard'
     _description = 'Wizard для быстрой записи на приём'
 
-    patient_id = fields.Many2one('vet.patient', required=True)
-    doctor_id = fields.Many2one('vet.doctor', required=True)
+    patient_id = fields.Many2one(comodel_name='vet.patient', required=True)
+    doctor_id = fields.Many2one(comodel_name='vet.doctor', required=True)
     appointment_date = fields.Datetime(required=True)
     reason = fields.Char()
 

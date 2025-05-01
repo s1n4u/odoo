@@ -9,7 +9,7 @@
                 <field name="name"/>
                 <field name="species"/>
                 <field name="breed"/>
-                <field name="birth_date"/>
+                <field name="birthday"/>
                 <field name="owner_id"/>
             </tree>
         </field>
@@ -20,13 +20,22 @@
         <field name="model">vet.patient</field>
         <field name="arch" type="xml">
             <form string="Пациент">
+                <header>
+                    <button name="open_quick_appointment_wizard"
+                            type="object"
+                            string="Быстрая запись"
+                            class="btn-primary"
+                            context="{'default_patient_id': active_id}" />
+                </header>
                 <sheet>
                     <group>
                         <group>
                             <field name="name"/>
                             <field name="species"/>
                             <field name="breed"/>
-                            <field name="birth_date"/>
+                            <field name="birthday"/>
+                            <field name="gender"/>
+                            <field name="age"/>
                             <field name="owner_email"/>
                             <field name="owner_id"/>
                             <field name="notes"/>
@@ -47,11 +56,42 @@
         </field>
     </record>
 
+    <record id="vet_patient_kanban" model="ir.ui.view">
+        <field name="name">vet.patient.kanban</field>
+        <field name="model">vet.patient</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_example" quick_create="false" default_group_by="species">
+                <templates>
+                    <t t-name="kanban-box">
+                    <div class="oe_kanban_global_click" style="display: flex; align-items: center; justify-content: space-between;">
+                        <div>
+                            <strong><t t-esc="record.name.value"/></strong><br/>
+                            <span><strong>Gender:</strong> <t t-esc="record.gender.value"/></span><br/>
+                            <strong><t t-esc="record.owner_id.value"/> </strong><br/>
+                            <span><t t-esc="record.owner_email.value"/></span><br/>
+                        </div>
+                        <field name="image" widget="image" class="oe_avatar oe_right" options="{'preview_image': 'image_1920'}" style="max-width:300px;max-height:300px;"/>
+                    </div>
+                    </t>
+                </templates>
+                <field name="name"/>
+                <field name="species"/>
+                <field name="breed"/>
+                <field name="birthday"/>
+                <field name="age"/>
+                <field name="gender"/>
+                <field name="owner_email"/>
+                <field name="owner_id"/>
+                <field name="notes"/>
+            </kanban>
+        </field>
+    </record>
+
     <record id="action_vet_patient" model="ir.actions.act_window">
         <field name="name">Пациенты</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">vet.patient</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,kanban</field>
     </record>
 
 </odoo>
