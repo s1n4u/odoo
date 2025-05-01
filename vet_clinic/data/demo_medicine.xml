@@ -1,43 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
-  <record id="medicine_dental_gel" model="vet.medicine">
-    <field name="name">Dental Cleaning Gel</field>
-    <field name="manufacturer">VetHealth Co.</field>
-    <field name="medicine_form">ointment</field>
-    <field name="price">12.50</field>
-    <field name="expiration_date">2026-12-31</field>
-    <field name="quantity">25</field>
-    <field name="notes">Used for dental plaque removal in dogs and cats.</field>
-  </record>
+    <record id="medicine_dental_gel" model="vet.medicine">
+        <field name="name">Dental Cleaning Gel</field>
+        <field name="manufacturer">VetHealth Co.</field>
+        <field name="medicine_form">ointment</field>
+        <field name="price">12.50</field>
+        <field name="expiration_date">2026-12-31</field>
+        <field name="quantity">25</field>
+        <field name="notes">Used for dental plaque removal in dogs and cats.
+        </field>
+    </record>
 
-  <record id="medicine_amoxicillin" model="vet.medicine">
-    <field name="name">Amoxicillin 250mg</field>
-    <field name="manufacturer">BioVet Pharma</field>
-    <field name="medicine_form">capsule</field>
-    <field name="price">18.90</field>
-    <field name="expiration_date">2025-11-15</field>
-    <field name="quantity">40</field>
-    <field name="notes">Broad-spectrum antibiotic for small animals.</field>
-  </record>
+    <record id="medicine_amoxicillin" model="vet.medicine">
+        <field name="name">Amoxicillin 250mg</field>
+        <field name="manufacturer">BioVet Pharma</field>
+        <field name="medicine_form">capsule</field>
+        <field name="price">18.90</field>
+        <field name="expiration_date">2025-11-15</field>
+        <field name="quantity">40</field>
+        <field name="notes">Broad-spectrum antibiotic for small animals.
+        </field>
+    </record>
 
-  <record id="medicine_multivitamin_bird" model="vet.medicine">
-    <field name="name">Avian Multivitamin</field>
-    <field name="manufacturer">FeatherLife Inc.</field>
-    <field name="medicine_form">liquid</field>
-    <field name="price">9.99</field>
-    <field name="expiration_date">2026-03-10</field>
-    <field name="quantity">60</field>
-    <field name="notes">Supports feather health and immune function in birds.</field>
-  </record>
+    <record id="medicine_multivitamin_bird" model="vet.medicine">
+        <field name="name">Avian Multivitamin</field>
+        <field name="manufacturer">FeatherLife Inc.</field>
+        <field name="medicine_form">liquid</field>
+        <field name="price">9.99</field>
+        <field name="expiration_date">2026-03-10</field>
+        <field name="quantity">60</field>
+        <field name="notes">Supports feather health and immune function in
+            birds.
+        </field>
+    </record>
 
-  <record id="medicine_antiviral" model="vet.medicine">
-    <field name="name">Antiviral Medication</field>
-    <field name="manufacturer">Feline Pharma</field>
-    <field name="medicine_form">liquid</field>
-    <field name="price">24.99</field>
-    <field name="expiration_date">2026-05-01</field>
-    <field name="quantity">30</field>
-</record>
+    <record id="medicine_antiviral" model="vet.medicine">
+        <field name="name">Antiviral Medication</field>
+        <field name="manufacturer">Feline Pharma</field>
+        <field name="medicine_form">liquid</field>
+        <field name="price">24.99</field>
+        <field name="expiration_date">2026-05-01</field>
+        <field name="quantity">30</field>
+    </record>
 
 </odoo>

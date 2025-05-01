@@ -5,18 +5,18 @@
         <t t-call="web.external_layout">
           <div class="page">
             <h2 style="text-align: center; margin-bottom: 20px;">
-              Отчёт по диагнозу
+              Diagnosis Report
             </h2>
 
-            <p><strong>Пациент:</strong> <t t-esc="doc.patient_id.name"/></p>
-            <p><strong>Владелец:</strong> <t t-esc="doc.patient_id.owner_id.name"/></p>
-            <p><strong>Врач:</strong> <t t-esc="doc.doctor_id.name"/></p>
-            <p><strong>Дата диагноза:</strong> <t t-esc="doc.diagnosis_date"/></p>
+            <p><strong>Patient:</strong> <t t-esc="doc.patient_id.name"/></p>
+            <p><strong>Owner:</strong> <t t-esc="doc.patient_id.owner_id.name"/></p>
+            <p><strong>Doctor:</strong> <t t-esc="doc.doctor_id.name"/></p>
+            <p><strong>Diagnosis Date:</strong> <t t-esc="doc.diagnosis_date"/></p>
 
             <t t-if="doc.disease_id">
-              <p><strong>Заболевание:</strong> <t t-esc="doc.disease_id.name"/></p>
+              <p><strong>Disease:</strong> <t t-esc="doc.disease_id.name"/></p>
               <t t-if="doc.disease_id.description">
-                <p><strong>Описание заболевания:</strong></p>
+                <p><strong>Disease Description:</strong></p>
                 <p t-esc="doc.disease_id.description"/>
               </t>
             </t>
@@ -24,12 +24,12 @@
             <hr style="margin: 20px 0;"/>
 
             <t t-if="doc.treatment">
-              <p><strong>Лечение:</strong></p>
+              <p><strong>Treatment:</strong></p>
               <p t-esc="doc.treatment"/>
             </t>
 
             <t t-if="doc.medicine_ids">
-              <p><strong>Назначенные медикаменты:</strong></p>
+              <p><strong>Prescribed Medications:</strong></p>
               <ul>
                 <t t-foreach="doc.medicine_ids" t-as="med">
                   <li>
@@ -41,7 +41,7 @@
             </t>
 
             <t t-if="doc.recommendations">
-              <p><strong>Рекомендации:</strong></p>
+              <p><strong>Recommendations:</strong></p>
               <p t-esc="doc.recommendations"/>
             </t>
 

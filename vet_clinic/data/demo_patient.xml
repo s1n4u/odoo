@@ -1,50 +1,48 @@
 <odoo>
 
-  <!-- Owners -->
-  <record id="owner_alice" model="res.partner">
-    <field name="name">Alice Moore</field>
-    <field name="email">alice@example.com</field>
-  </record>
+    <record id="owner_alice" model="res.partner">
+        <field name="name">Alice Moore</field>
+        <field name="email">alice@example.com</field>
+    </record>
 
-  <record id="owner_bob" model="res.partner">
-    <field name="name">Bob Marley</field>
-    <field name="email">bob@example.com</field>
-  </record>
+    <record id="owner_bob" model="res.partner">
+        <field name="name">Bob Marley</field>
+        <field name="email">bob@example.com</field>
+    </record>
 
-  <record id="owner_carla" model="res.partner">
-    <field name="name">Carla Finch</field>
-    <field name="email">carla@example.com</field>
-  </record>
+    <record id="owner_carla" model="res.partner">
+        <field name="name">Carla Finch</field>
+        <field name="email">carla@example.com</field>
+    </record>
 
-  <!-- Patients -->
-  <record id="patient_buddy" model="vet.patient">
-    <field name="name">Buddy</field>
-    <field name="species_id" ref="vet_clinic.species_dog"/>
-    <field name="breed_id" ref="vet_clinic.breed_labrador"/>
-    <field name="birthday">2019-06-15</field>
-    <field name="gender">male</field>
-    <field name="owner_id" ref="owner_alice"/>
-    <field name="notes">Energetic and friendly.</field>
-  </record>
+    <record id="patient_buddy" model="vet.patient">
+        <field name="name">Buddy</field>
+        <field name="species_id" ref="vet_clinic.species_dog"/>
+        <field name="breed_id" ref="vet_clinic.breed_labrador"/>
+        <field name="birthday">2019-06-15</field>
+        <field name="gender">male</field>
+        <field name="owner_id" ref="owner_alice"/>
+        <field name="notes">Energetic and friendly.</field>
+    </record>
 
-  <record id="patient_whiskers" model="vet.patient">
-    <field name="name">Whiskers</field>
-    <field name="species_id" ref="vet_clinic.species_cat"/>
-    <field name="breed_id" ref="vet_clinic.breed_siamese"/>
-    <field name="birthday">2020-03-22</field>
-    <field name="gender">female</field>
-    <field name="owner_id" ref="owner_bob"/>
-    <field name="notes">Shy but affectionate.</field>
-  </record>
+    <record id="patient_whiskers" model="vet.patient">
+        <field name="name">Whiskers</field>
+        <field name="species_id" ref="vet_clinic.species_cat"/>
+        <field name="breed_id" ref="vet_clinic.breed_siamese"/>
+        <field name="birthday">2020-03-22</field>
+        <field name="gender">female</field>
+        <field name="owner_id" ref="owner_bob"/>
+        <field name="notes">Shy but affectionate.</field>
+    </record>
 
-  <record id="patient_sky" model="vet.patient">
-    <field name="name">Sky</field>
-    <field name="species_id" ref="vet_clinic.species_bird"/>
-    <field name="breed_id" ref="vet_clinic.breed_parrot"/>
-    <field name="birthday">2021-08-01</field>
-    <field name="gender">male</field>
-    <field name="owner_id" ref="owner_carla"/>
-    <field name="notes">Talkative and colorful parrot.</field>
-  </record>
+    <record id="patient_sky" model="vet.patient">
+        <field name="name">Sky</field>
+        <field name="species_id" ref="vet_clinic.species_bird"/>
+        <field name="breed_id" ref="vet_clinic.breed_parrot"/>
+        <field name="birthday">2021-08-01</field>
+        <field name="gender">male</field>
+        <field name="owner_id" ref="owner_carla"/>
+        <field name="notes">Talkative and colorful parrot.</field>
+    </record>
 
 </odoo>

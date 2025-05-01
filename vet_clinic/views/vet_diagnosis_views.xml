@@ -17,9 +17,10 @@
         <field name="name">vet.diagnosis.form</field>
         <field name="model">vet.diagnosis</field>
         <field name="arch" type="xml">
-            <form string="Диагноз и лечение">
+            <form string="Diagnosis and Treatment">
                 <header>
-                    <button name="action_print_diagnosis" string="Печать" type="object" class="btn-primary"/>
+                    <button name="action_print_diagnosis" string="Print"
+                            type="object" class="btn-primary"/>
                 </header>
                 <sheet>
                     <group>
@@ -33,7 +34,8 @@
                     </group>
                 </sheet>
                 <div class="oe_chatter">
-                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_follower_ids"
+                           widget="mail_followers"/>
                     <field name="activity_ids" widget="mail_activity"/>
                     <field name="message_ids" widget="mail_thread"/>
                 </div>
@@ -42,7 +44,7 @@
     </record>
 
     <record id="action_vet_diagnosis" model="ir.actions.act_window">
-        <field name="name">Диагнозы и лечение</field>
+        <field name="name">Diagnoses and Treatments</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">vet.diagnosis</field>
         <field name="view_mode">tree,form</field>

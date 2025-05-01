@@ -1,19 +1,25 @@
 from odoo import models, fields, api
 
+
 class VetDiagnosis(models.Model):
     _name = 'vet.diagnosis'
     _description = 'Veterinary Diagnosis and Treatment'
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _order = 'diagnosis_date desc'
 
-    patient_id = fields.Many2one(comodel_name='vet.patient', string='Пациент', required=True, tracking=True)
-    doctor_id = fields.Many2one(comodel_name='vet.doctor', string='Врач', required=True, tracking=True)
-    diagnosis_date = fields.Date(string='Дата', default=fields.Date.today, required=True, tracking=True)
-    disease_id = fields.Many2one(comodel_name='vet.disease', string='Заболевание',
+    patient_id = fields.Many2one(comodel_name='vet.patient', string='Patient',
+                                 required=True, tracking=True)
+    doctor_id = fields.Many2one(comodel_name='vet.doctor',
+                                string='Veterinarian', required=True,
+                                tracking=True)
+    diagnosis_date = fields.Date(string='Date', default=fields.Date.today,
+                                 required=True, tracking=True)
+    disease_id = fields.Many2one(comodel_name='vet.disease', string='Disease',
                                  tracking=True)
-    treatment = fields.Text(string='Лечение', tracking=True)
-    medicine_ids = fields.Many2many(comodel_name='vet.medicine', string='Медикаменты')
-    recommendations = fields.Text(string='Рекомендации')
+    treatment = fields.Text(string='Treatment', tracking=True)
+    medicine_ids = fields.Many2many(comodel_name='vet.medicine',
+                                    string='Medications')
+    recommendations = fields.Text(string='Recommendations')
 
     def action_print_diagnosis(self):
         return self.env.ref('vet_clinic.vet_diagnosis_report').report_action(

@@ -1,26 +1,33 @@
 from datetime import date
 from odoo import models, fields, api
 
+
 class VetPatient(models.Model):
     _name = 'vet.patient'
     _description = 'Veterinary Patient'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    name = fields.Char(string='Имя животного', required=True, tracking=True)
-    species_id = fields.Many2one(comodel_name='vet.species', string='Вид', required=True)
+    name = fields.Char(string='Pet Name',
+                       required=True,
+                       tracking=True,
+                       )
+    species_id = fields.Many2one(comodel_name='vet.species',
+                                 string='Species',
+                                 required=True,
+                                 )
     breed_id = fields.Many2one(
         comodel_name='vet.breed',
-        string='Порода',
+        string='Breed',
         domain="[('species_id', '=', species_id)]",
     )
-    birthday = fields.Date(string='Дата рождения', tracking=True)
+    birthday = fields.Date(string='Date of Birth', tracking=True)
     age = fields.Integer(
         compute='_compute_age',
         store=True,
     )
     owner_id = fields.Many2one(
         comodel_name='res.partner',
-        string='Владелец',
+        string='Owner',
         required=True,
         tracking=True,
     )
@@ -31,18 +38,18 @@ class VetPatient(models.Model):
         store=True,
         readonly=False,
     )
-    gender = fields.Selection([
+    gender = fields.Selection(selection=[
         ('male', 'Male'),
         ('female', 'Female'),
-    ], )
-    image = fields.Image(string='Фото')
-    notes = fields.Text(string='Примечания')
+    ], string='Gender')
+    image = fields.Image(string='Photo')
+    notes = fields.Text(string='Notes')
 
     def open_quick_appointment_wizard(self):
         self.ensure_one()
         return {
             'type': 'ir.actions.act_window',
-            'name': 'Быстрая запись',
+            'name': 'Quick Appointment',
             'res_model': 'quick.appointment.wizard',
             'view_mode': 'form',
             'target': 'new',
@@ -67,7 +74,8 @@ class VetPatient(models.Model):
         if patient.owner_id:
             partner_ids.append(patient.owner_id.id)
 
-        vet_group = self.env.ref('vet_clinic.group_vet_admin', raise_if_not_found=False)
+        vet_group = self.env.ref('vet_clinic.group_vet_admin',
+                                 raise_if_not_found=False)
 
         if vet_group:
             vet_users = vet_group.users
@@ -78,6 +86,7 @@ class VetPatient(models.Model):
             patient.message_subscribe(partner_ids=partner_ids)
 
         return patient
+
     @api.depends('birthday')
     def _compute_age(self):
         today = date.today()
@@ -85,8 +94,8 @@ class VetPatient(models.Model):
             if record.birthday:
                 age = today.year - record.birthday.year
                 if (
-                    (today.month, today.day) <
-                    (record.birthday.month, record.birthday.day)
+                        (today.month, today.day) <
+                        (record.birthday.month, record.birthday.day)
                 ):
                     age -= 1
                 record.age = age
@@ -98,7 +107,11 @@ class VetPatient(models.Model):
         today = date.today()
         patients = self.search([('birthday', '!=', False)])
         for pet in patients:
-            if pet.birthday and pet.birthday.month == today.month and pet.birthday.day == today.day:
-                template = self.env.ref('vet_clinic.email_template_pet_birthday', raise_if_not_found=False)
+            if (pet.birthday
+                    and pet.birthday.month == today.month
+                    and pet.birthday.day == today.day):
+                template = self.env.ref(
+                    'vet_clinic.email_template_pet_birthday',
+                    raise_if_not_found=False)
                 if template and pet.owner_id.email:
                     template.send_mail(pet.id, force_send=True)

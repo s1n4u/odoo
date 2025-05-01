@@ -1,32 +1,46 @@
-<?xml version='1.0' encoding='UTF-8'?>
 <odoo>
-  <record id="diagnosis_buddy_tartar" model="vet.diagnosis">
-    <field name="patient_id" ref="vet_clinic.patient_buddy"/>
-    <field name="doctor_id" ref="vet_clinic.vet_doctor_john"/>
-    <field name="diagnosis_date">2025-05-15</field>
-    <field name="disease_id" ref="vet_clinic.disease_tartar"/>
-    <field name="treatment">Professional dental cleaning under anesthesia.</field>
-    <field name="medicine_ids" eval="[(4, ref('vet_clinic.medicine_dental_gel'))]"/>
-    <field name="recommendations">Brush teeth regularly. Schedule cleaning once a year.</field>
-  </record>
+    <record id="diagnosis_buddy_tartar" model="vet.diagnosis">
+        <field name="patient_id" ref="vet_clinic.patient_buddy"/>
+        <field name="doctor_id" ref="vet_clinic.vet_doctor_john"/>
+        <field name="diagnosis_date">2025-05-15</field>
+        <field name="disease_id" ref="vet_clinic.disease_tartar"/>
+        <field name="treatment">Professional dental cleaning under
+            anesthesia.
+        </field>
+        <field name="medicine_ids"
+               eval="[(4, ref('vet_clinic.medicine_dental_gel'))]"/>
+        <field name="recommendations">Brush teeth regularly. Schedule cleaning
+            once a year.
+        </field>
+    </record>
 
-  <record id="diagnosis_whiskers_rhinitis" model="vet.diagnosis">
-    <field name="patient_id" ref="vet_clinic.patient_whiskers"/>
-    <field name="doctor_id" ref="vet_clinic.vet_doctor_susan"/>
-    <field name="diagnosis_date">2025-05-20</field>
-    <field name="disease_id" ref="vet_clinic.disease_viral_rhinitis"/>
-    <field name="treatment">Prescribed antiviral medication and supportive care.</field>
-    <field name="medicine_ids" eval="[(4, ref('vet_clinic.medicine_antiviral'))]"/>
-    <field name="recommendations">Isolate from other pets. Monitor symptoms daily.</field>
-  </record>
+    <record id="diagnosis_whiskers_rhinitis" model="vet.diagnosis">
+        <field name="patient_id" ref="vet_clinic.patient_whiskers"/>
+        <field name="doctor_id" ref="vet_clinic.vet_doctor_susan"/>
+        <field name="diagnosis_date">2025-05-20</field>
+        <field name="disease_id" ref="vet_clinic.disease_viral_rhinitis"/>
+        <field name="treatment">Prescribed antiviral medication and supportive
+            care.
+        </field>
+        <field name="medicine_ids"
+               eval="[(4, ref('vet_clinic.medicine_antiviral'))]"/>
+        <field name="recommendations">Isolate from other pets. Monitor symptoms
+            daily.
+        </field>
+    </record>
 
-  <record id="diagnosis_sky_pbfd" model="vet.diagnosis">
-    <field name="patient_id" ref="vet_clinic.patient_sky"/>
-    <field name="doctor_id" ref="vet_clinic.vet_doctor_kevin"/>
-    <field name="diagnosis_date">2025-06-02</field>
-    <field name="disease_id" ref="vet_clinic.disease_pbfd"/>
-    <field name="treatment">Environmental enrichment and immune supplements.</field>
-    <field name="medicine_ids" eval="[(4, ref('vet_clinic.medicine_multivitamin_bird'))]"/>
-    <field name="recommendations">Provide toys and space. Monitor behavior weekly.</field>
-  </record>
+    <record id="diagnosis_sky_pbfd" model="vet.diagnosis">
+        <field name="patient_id" ref="vet_clinic.patient_sky"/>
+        <field name="doctor_id" ref="vet_clinic.vet_doctor_kevin"/>
+        <field name="diagnosis_date">2025-06-02</field>
+        <field name="disease_id" ref="vet_clinic.disease_pbfd"/>
+        <field name="treatment">Environmental enrichment and immune
+            supplements.
+        </field>
+        <field name="medicine_ids"
+               eval="[(4, ref('vet_clinic.medicine_multivitamin_bird'))]"/>
+        <field name="recommendations">Provide toys and space. Monitor behavior
+            weekly.
+        </field>
+    </record>
 </odoo>

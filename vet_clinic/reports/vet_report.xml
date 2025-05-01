@@ -1,6 +1,5 @@
 <odoo>
 
-    <!-- HTML-версия отчёта (просмотр) -->
     <record id="vet_clinic_action_report_diagnosis_html" model="ir.actions.report">
         <field name="name">Diagnosis Report (HTML)</field>
         <field name="model">vet.diagnosis</field>
@@ -11,7 +10,6 @@
         <field name="binding_type">report</field>
     </record>
 
-    <!-- PDF-версия отчёта -->
     <record id="vet_diagnosis_report" model="ir.actions.report">
         <field name="name">Diagnosis Report</field>
         <field name="model">vet.diagnosis</field>
