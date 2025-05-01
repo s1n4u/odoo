@@ -6,8 +6,8 @@ class VetMedicine(models.Model):
     _description = 'Veterinary Medicine'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    name = fields.Char(string='Name', required=True, tracking=True)
-    manufacturer = fields.Char(string='Manufacturer', tracking=True)
+    name = fields.Char(required=True, tracking=True)
+    manufacturer = fields.Char(tracking=True)
     medicine_form = fields.Selection(selection=[
         ('tablet', 'Tablet'),
         ('capsule', 'Capsule'),
@@ -16,7 +16,7 @@ class VetMedicine(models.Model):
         ('ointment', 'Ointment'),
         ('other', 'Other')
     ], string='Form', required=True, tracking=True)
-    price = fields.Float(string='Price', tracking=True)
-    expiration_date = fields.Date(string='Expiration Date', tracking=True)
+    price = fields.Float(tracking=True)
+    expiration_date = fields.Date(tracking=True)
     quantity = fields.Integer(string='Stock Quantity', tracking=True)
-    notes = fields.Text(string='Notes')
+    notes = fields.Text()

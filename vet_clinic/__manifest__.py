@@ -31,7 +31,6 @@
         'views/res_partner_views.xml',
         'wizard/quick_appointment_wizard_views.xml',
         'views/menus.xml',
-        'wizard/quick_appointment_wizard_views.xml',
         'data/cron.xml',
         'data/email_template.xml',
         'data/data.xml',
@@ -43,7 +42,6 @@
         'data/demo_diagnosis.xml',
     ],
     'demo': [
-#        'demo/demo_data.xml',
     ],
 
     'installable': True,

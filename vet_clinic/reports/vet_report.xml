@@ -1,5 +1,4 @@
 <odoo>
-
     <record id="vet_clinic_action_report_diagnosis_html" model="ir.actions.report">
         <field name="name">Diagnosis Report (HTML)</field>
         <field name="model">vet.diagnosis</field>
@@ -19,5 +18,4 @@
         <field name="binding_model_id" ref="vet_clinic.model_vet_diagnosis"/>
         <field name="binding_type">report</field>
     </record>
-
 </odoo>

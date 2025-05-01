@@ -38,12 +38,13 @@ class VetPatient(models.Model):
         store=True,
         readonly=False,
     )
-    gender = fields.Selection(selection=[
+    gender = fields.Selection(
+        selection=[
         ('male', 'Male'),
         ('female', 'Female'),
-    ], string='Gender')
-    image = fields.Image(string='Photo')
-    notes = fields.Text(string='Notes')
+    ], )
+    image = fields.Image()
+    notes = fields.Text()
 
     def open_quick_appointment_wizard(self):
         self.ensure_one()

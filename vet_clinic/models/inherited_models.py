@@ -11,5 +11,5 @@ class VetDisease(models.Model):
     _name = 'vet.disease'
     _description = 'Disease'
 
-    name = fields.Char(required=True, string='Name')
-    description = fields.Text(string='Description')
+    name = fields.Char(required=True)
+    description = fields.Text()

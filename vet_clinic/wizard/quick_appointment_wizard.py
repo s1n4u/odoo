@@ -1,5 +1,6 @@
 from odoo import models, fields
 
+
 class QuickAppointmentWizard(models.TransientModel):
     _name = 'quick.appointment.wizard'
     _description = 'Wizard for Quick Appointment Booking'

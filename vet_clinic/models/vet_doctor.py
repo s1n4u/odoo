@@ -33,4 +33,4 @@ class VetDoctor(models.Model):
     )
     experience_years = fields.Integer(string='Years of Experience',
                                       tracking=True)
-    notes = fields.Text(string='Notes')
+    notes = fields.Text()

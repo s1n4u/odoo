@@ -16,10 +16,10 @@ class VetDiagnosis(models.Model):
                                  required=True, tracking=True)
     disease_id = fields.Many2one(comodel_name='vet.disease', string='Disease',
                                  tracking=True)
-    treatment = fields.Text(string='Treatment', tracking=True)
+    treatment = fields.Text(tracking=True)
     medicine_ids = fields.Many2many(comodel_name='vet.medicine',
                                     string='Medications')
-    recommendations = fields.Text(string='Recommendations')
+    recommendations = fields.Text()
 
     def action_print_diagnosis(self):
         return self.env.ref('vet_clinic.vet_diagnosis_report').report_action(

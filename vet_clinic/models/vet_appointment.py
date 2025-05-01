@@ -14,16 +14,15 @@ class VetAppointment(models.Model):
                                 tracking=True)
     appointment_date = fields.Datetime(string='Appointment Date & Time',
                                        required=True, tracking=True)
-    reason = fields.Char(string='Reason', tracking=True)
+    reason = fields.Char(tracking=True)
     state = fields.Selection(selection=[
         ('planned', 'Planned'),
         ('done', 'Completed'),
         ('canceled', 'Canceled')
     ], default='planned', string='Status', tracking=True)
-    notes = fields.Text(string='Notes')
+    notes = fields.Text()
 
-    color = fields.Integer(string='Color', compute='_compute_color',
-                           store=True)
+    color = fields.Integer(compute='_compute_color',store=True)
 
     @api.depends('state')
     def _compute_color(self):
