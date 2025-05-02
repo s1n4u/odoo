@@ -1,0 +1,41 @@
+<odoo>
+
+    <record id="appointment_buddy_checkup" model="vet.appointment">
+        <field name="patient_id" ref="vet_clinic.patient_buddy"/>
+        <field name="doctor_id" ref="vet_clinic.vet_doctor_john"/>
+        <field name="appointment_date">2025-05-15 10:00:00</field>
+        <field name="reason">Annual check-up</field>
+        <field name="state">done</field>
+        <field name="notes">All good. Slight tartar on molars.</field>
+    </record>
+
+    <record id="appointment_whiskers_sneeze" model="vet.appointment">
+        <field name="patient_id" ref="vet_clinic.patient_whiskers"/>
+        <field name="doctor_id" ref="vet_clinic.vet_doctor_susan"/>
+        <field name="appointment_date">2025-05-20 14:30:00</field>
+        <field name="reason">Sneezing and lethargy</field>
+        <field name="state">done</field>
+        <field name="notes">Prescribed antibiotics. Recheck in 7 days.</field>
+    </record>
+
+    <record id="appointment_sky_feathers" model="vet.appointment">
+        <field name="patient_id" ref="vet_clinic.patient_sky"/>
+        <field name="doctor_id" ref="vet_clinic.vet_doctor_kevin"/>
+        <field name="appointment_date">2025-06-02 09:00:00</field>
+        <field name="reason">Feather loss</field>
+        <field name="state">planned</field>
+        <field name="notes">Possible stress. Advised enrichment and diet
+            review.
+        </field>
+    </record>
+
+    <record id="appointment_buddy_canceled" model="vet.appointment">
+        <field name="patient_id" ref="vet_clinic.patient_buddy"/>
+        <field name="doctor_id" ref="vet_clinic.vet_doctor_john"/>
+        <field name="appointment_date">2025-07-01 16:00:00</field>
+        <field name="reason">Vaccine booster</field>
+        <field name="state">canceled</field>
+        <field name="notes">Client called to cancel.</field>
+    </record>
+
+</odoo>

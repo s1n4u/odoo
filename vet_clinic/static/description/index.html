@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Veterinary Clinic Module</title>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background-color: #fdfdfd;
+            color: #333;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2a7f62;
+        }
+        h2 {
+            color: #3a3a3a;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 90%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Veterinary Clinic Module</h1>
+
+    <div class="section">
+        <h2>Overview</h2>
+        <p>
+            This module provides a full-featured management system for veterinary clinics, including functionality for managing patients, doctors, appointments, diagnoses, medicines, and diseases.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Features</h2>
+        <ul>
+            <li>Animal patients with species, breed, and birthday tracking</li>
+            <li>Owner linking via <code>res.partner</code></li>
+            <li>Doctor management using linked users</li>
+            <li>Appointments with status tracking and quick wizard</li>
+            <li>Diagnosis records with treatments, medicines, and recommendations</li>
+            <li>Birthday email reminders and discount logic</li>
+            <li>Customizable species and breeds</li>
+            <li>Integrated QWeb report for diagnoses</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Technical</h2>
+        <ul>
+            <li>Compatible with Odoo 17+</li>
+            <li>Extensive use of <code>mail.thread</code> for chatter</li>
+            <li>Fully translatable (EN/UA)</li>
+            <li>Demo data provided for testing</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Getting Started</h2>
+        <ol>
+            <li>Install dependencies: <code>base</code>, <code>mail</code>, <code>product</code>, <code>web</code></li>
+            <li>Install the module: <code>vet_clinic</code></li>
+            <li>Explore the menu: Veterinary Clinic → Patients, Appointments, Doctors, etc.</li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>Author</h2>
+        <p>Created by <strong>s1n</strong></p>
+    </div>
+
+</body>
+</html>

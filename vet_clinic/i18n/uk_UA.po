@@ -1,0 +1,854 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* vet_clinic
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-02 08:54+0000\n"
+"PO-Revision-Date: 2025-05-02 08:54+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: vet_clinic
+#: model:mail.template,body_html:vet_clinic.email_template_pet_birthday
+msgid ""
+"\n"
+"            \n"
+"      <p>Hello, ${object.owner_id.name}!</p>\n"
+"      <p>Today is your beloved pet <strong>${object.name}</strong>'s birthday! 🎉</p>\n"
+"      <p>We congratulate you and offer a <strong>20% discount</strong> on your next visit within 30 days!</p>\n"
+"      <p>Best regards,<br/>Your veterinary clinic</p>\n"
+"        \n"
+"        "
+msgstr ""
+"\n"
+"            \n"
+"      <p>Вітаємо, ${object.owner_id.name}!</p>\n"
+"      <p>Сьогодні день народження вашого улюбленця <strong>${object.name}</strong>! 🎉</p>\n"
+"      <p>Ми вітаємо вас і пропонуємо <strong>знижку 20%</strong> на наступний візит протягом 30 днів!</p>\n"
+"      <p>З найкращими побажаннями,<br/>Ваша ветеринарна клініка</p>\n"
+"        \n"
+"        "
+
+#. module: vet_clinic
+#: model_terms:ir.ui.view,arch_db:vet_clinic.report_diagnosis
+msgid "<strong>Diagnosis Date:</strong>"
+msgstr "<strong>Дата діагнозу:</strong>"
+
+#. module: vet_clinic
+#: model_terms:ir.ui.view,arch_db:vet_clinic.report_diagnosis
+msgid "<strong>Disease Description:</strong>"
+msgstr "<strong>Опис захворювання:</strong>"
+
+#. module: vet_clinic
+#: model_terms:ir.ui.view,arch_db:vet_clinic.report_diagnosis
+msgid "<strong>Disease:</strong>"
+msgstr "<strong>Захворювання:</strong>"
+
+#. module: vet_clinic
+#: model_terms:ir.ui.view,arch_db:vet_clinic.report_diagnosis
+msgid "<strong>Doctor:</strong>"
+msgstr "<strong>Лікар:</strong>"
+
+#. module: vet_clinic
+#: model_terms:ir.ui.view,arch_db:vet_clinic.vet_patient_kanban
+msgid "<strong>Gender:</strong>"
+msgstr "<strong>Стать:</strong>"
+
+#. module: vet_clinic
+#: model_terms:ir.ui.view,arch_db:vet_clinic.report_diagnosis
+msgid "<strong>Owner:</strong>"
+msgstr "<strong>Власник:</strong>"
+
+#. module: vet_clinic
+#: model_terms:ir.ui.view,arch_db:vet_clinic.report_diagnosis
+msgid "<strong>Patient:</strong>"
+msgstr "<strong>Пацієнт:</strong>"
+
+#. module: vet_clinic
+#: model_terms:ir.ui.view,arch_db:vet_clinic.report_diagnosis
+msgid "<strong>Prescribed Medications:</strong>"
+msgstr "<strong>Призначені медикаменти:</strong>"
+
+#. module: vet_clinic
+#: model_terms:ir.ui.view,arch_db:vet_clinic.report_diagnosis
+msgid "<strong>Recommendations:</strong>"
+msgstr "<strong>Рекомендації:</strong>"
+
+#. module: vet_clinic
+#: model_terms:ir.ui.view,arch_db:vet_clinic.report_diagnosis
+msgid "<strong>Treatment:</strong>"
+msgstr "<strong>Лікування:</strong>"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__message_needaction
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__message_needaction
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__message_needaction
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__message_needaction
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__message_needaction
+msgid "Action Needed"
+msgstr "Потрібна дія"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__activity_ids
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__activity_ids
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__activity_ids
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__activity_ids
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__activity_ids
+msgid "Activities"
+msgstr "Дії"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__activity_exception_decoration
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__activity_exception_decoration
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__activity_exception_decoration
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__activity_exception_decoration
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Позначення винятку дії"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__activity_state
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__activity_state
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__activity_state
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__activity_state
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__activity_state
+msgid "Activity State"
+msgstr "Стан дії"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__activity_type_icon
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__activity_type_icon
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__activity_type_icon
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__activity_type_icon
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Значок типу дії"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__age
+msgid "Age"
+msgstr "Вік"
+
+#. module: vet_clinic
+#: model:ir.model,name:vet_clinic.model_vet_breed
+msgid "Animal Breed"
+msgstr "Порода тварини"
+
+#. module: vet_clinic
+#: model:ir.model,name:vet_clinic.model_vet_species
+msgid "Animal Species"
+msgstr "Вид тварини"
+
+#. module: vet_clinic
+#: model_terms:ir.ui.view,arch_db:vet_clinic.vet_appointment_form_view
+msgid "Appointment"
+msgstr "Прийом"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_quick_appointment_wizard__appointment_date
+msgid "Appointment Date"
+msgstr "Дата прийому"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__appointment_date
+msgid "Appointment Date & Time"
+msgstr "Дата та час прийому"
+
+#. module: vet_clinic
+#: model:ir.actions.act_window,name:vet_clinic.action_vet_appointment
+#: model:ir.ui.menu,name:vet_clinic.vet_clinic_appointment_menu
+msgid "Appointments"
+msgstr "Прийоми"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__message_attachment_count
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__message_attachment_count
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__message_attachment_count
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__message_attachment_count
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__message_attachment_count
+msgid "Attachment Count"
+msgstr "Кількість вкладень"
+
+#. module: vet_clinic
+#: model_terms:ir.ui.view,arch_db:vet_clinic.vet_patient_search_view
+msgid "Birthday today"
+msgstr "День народження сьогодні"
+
+#. module: vet_clinic
+#: model_terms:ir.ui.view,arch_db:vet_clinic.vet_patient_search_view
+msgid "Birthdays"
+msgstr "Дні народження"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__breed_id
+msgid "Breed"
+msgstr "Порода"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_breed__name
+msgid "Breed Name"
+msgstr "Назва породи"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_species__breed_ids
+msgid "Breeds"
+msgstr "Породи"
+
+#. module: vet_clinic
+#: model_terms:ir.ui.view,arch_db:vet_clinic.quick_appointment_wizard_form
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. module: vet_clinic
+#: model:ir.model.fields.selection,name:vet_clinic.selection__vet_appointment__state__canceled
+msgid "Canceled"
+msgstr "Скасовано"
+
+#. module: vet_clinic
+#: model:ir.model.fields.selection,name:vet_clinic.selection__vet_medicine__medicine_form__capsule
+msgid "Capsule"
+msgstr "Капсула"
+
+#. module: vet_clinic
+#: model:ir.actions.server,name:vet_clinic.cron_pet_birthday_check_ir_actions_server
+msgid "Check Pet Birthdays"
+msgstr "Перевірити дні народження тварин"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__color
+msgid "Color"
+msgstr "Колір"
+
+#. module: vet_clinic
+#: model:ir.model.fields.selection,name:vet_clinic.selection__vet_appointment__state__done
+msgid "Completed"
+msgstr "Завершено"
+
+#. module: vet_clinic
+#: model:ir.model,name:vet_clinic.model_res_partner
+msgid "Contact"
+msgstr "Контакт"
+
+#. module: vet_clinic
+#: model_terms:ir.ui.view,arch_db:vet_clinic.quick_appointment_wizard_form
+msgid "Create Appointment"
+msgstr "Створити прийом"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_quick_appointment_wizard__create_uid
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__create_uid
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_breed__create_uid
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__create_uid
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_disease__create_uid
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__create_uid
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__create_uid
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__create_uid
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_species__create_uid
+msgid "Created by"
+msgstr "Створено"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_quick_appointment_wizard__create_date
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__create_date
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_breed__create_date
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__create_date
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_disease__create_date
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__create_date
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__create_date
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__create_date
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_species__create_date
+msgid "Created on"
+msgstr "Дата створення"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__diagnosis_date
+msgid "Date"
+msgstr "Дата"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__birthday
+msgid "Date of Birth"
+msgstr "Дата народження"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_disease__description
+msgid "Description"
+msgstr "Опис"
+
+#. module: vet_clinic
+#: model:ir.actions.act_window,name:vet_clinic.action_vet_diagnosis
+#: model:ir.ui.menu,name:vet_clinic.vet_clinic_diagnosis_menu
+msgid "Diagnoses and Treatments"
+msgstr "Діагнози та лікування"
+
+#. module: vet_clinic
+#: model:ir.actions.report,name:vet_clinic.vet_diagnosis_report
+#: model_terms:ir.ui.view,arch_db:vet_clinic.report_diagnosis
+msgid "Diagnosis Report"
+msgstr "Звіт про діагноз"
+
+#. module: vet_clinic
+#: model:ir.actions.report,name:vet_clinic.vet_clinic_action_report_diagnosis_html
+msgid "Diagnosis Report (HTML)"
+msgstr "Звіт про діагноз (HTML)"
+
+#. module: vet_clinic
+#: model_terms:ir.ui.view,arch_db:vet_clinic.vet_diagnosis_form_view
+msgid "Diagnosis and Treatment"
+msgstr "Діагноз і лікування"
+
+#. module: vet_clinic
+#: model:ir.model,name:vet_clinic.model_vet_disease
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__disease_id
+msgid "Disease"
+msgstr "Захворювання"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_quick_appointment_wizard__display_name
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__display_name
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_breed__display_name
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__display_name
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_disease__display_name
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__display_name
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__display_name
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__display_name
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_species__display_name
+msgid "Display Name"
+msgstr "Відображуване ім’я"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_quick_appointment_wizard__doctor_id
+msgid "Doctor"
+msgstr "Лікар"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__email
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__owner_email
+msgid "Email"
+msgstr "Електронна пошта"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__expiration_date
+msgid "Expiration Date"
+msgstr "Термін придатності"
+
+#. module: vet_clinic
+#: model:ir.model.fields.selection,name:vet_clinic.selection__vet_patient__gender__female
+msgid "Female"
+msgstr "Самка"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__message_follower_ids
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__message_follower_ids
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__message_follower_ids
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__message_follower_ids
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__message_follower_ids
+msgid "Followers"
+msgstr "Підписники"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__message_partner_ids
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__message_partner_ids
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__message_partner_ids
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__message_partner_ids
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Підписники (партнери)"
+
+#. module: vet_clinic
+#: model:ir.model.fields,help:vet_clinic.field_vet_appointment__activity_type_icon
+#: model:ir.model.fields,help:vet_clinic.field_vet_diagnosis__activity_type_icon
+#: model:ir.model.fields,help:vet_clinic.field_vet_doctor__activity_type_icon
+#: model:ir.model.fields,help:vet_clinic.field_vet_medicine__activity_type_icon
+#: model:ir.model.fields,help:vet_clinic.field_vet_patient__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Іконка Font Awesome, напр. fa-tasks"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__medicine_form
+msgid "Form"
+msgstr "Форма"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__gender
+msgid "Gender"
+msgstr "Стать"
+
+#. module: vet_clinic
+#: model:mail.template,subject:vet_clinic.email_template_pet_birthday
+msgid "Happy Birthday, ${object.name}!"
+msgstr "З Днем народження, ${object.name}!"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__has_message
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__has_message
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__has_message
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__has_message
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__has_message
+msgid "Has Message"
+msgstr "Є повідомлення"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_quick_appointment_wizard__id
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__id
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_breed__id
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__id
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_disease__id
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__id
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__id
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__id
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_species__id
+msgid "ID"
+msgstr "ID"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__activity_exception_icon
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__activity_exception_icon
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__activity_exception_icon
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__activity_exception_icon
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__activity_exception_icon
+msgid "Icon"
+msgstr "Іконка"
+
+#. module: vet_clinic
+#: model:ir.model.fields,help:vet_clinic.field_vet_appointment__activity_exception_icon
+#: model:ir.model.fields,help:vet_clinic.field_vet_diagnosis__activity_exception_icon
+#: model:ir.model.fields,help:vet_clinic.field_vet_doctor__activity_exception_icon
+#: model:ir.model.fields,help:vet_clinic.field_vet_medicine__activity_exception_icon
+#: model:ir.model.fields,help:vet_clinic.field_vet_patient__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Іконка для позначення виняткової дії."
+
+#. module: vet_clinic
+#: model:ir.model.fields,help:vet_clinic.field_vet_appointment__message_needaction
+#: model:ir.model.fields,help:vet_clinic.field_vet_diagnosis__message_needaction
+#: model:ir.model.fields,help:vet_clinic.field_vet_doctor__message_needaction
+#: model:ir.model.fields,help:vet_clinic.field_vet_medicine__message_needaction
+#: model:ir.model.fields,help:vet_clinic.field_vet_patient__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Якщо встановлено, нові повідомлення потребують вашої уваги."
+
+#. module: vet_clinic
+#: model:ir.model.fields,help:vet_clinic.field_vet_appointment__message_has_error
+#: model:ir.model.fields,help:vet_clinic.field_vet_appointment__message_has_sms_error
+#: model:ir.model.fields,help:vet_clinic.field_vet_diagnosis__message_has_error
+#: model:ir.model.fields,help:vet_clinic.field_vet_diagnosis__message_has_sms_error
+#: model:ir.model.fields,help:vet_clinic.field_vet_doctor__message_has_error
+#: model:ir.model.fields,help:vet_clinic.field_vet_doctor__message_has_sms_error
+#: model:ir.model.fields,help:vet_clinic.field_vet_medicine__message_has_error
+#: model:ir.model.fields,help:vet_clinic.field_vet_medicine__message_has_sms_error
+#: model:ir.model.fields,help:vet_clinic.field_vet_patient__message_has_error
+#: model:ir.model.fields,help:vet_clinic.field_vet_patient__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Якщо встановлено, деякі повідомлення мають помилку доставки."
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__image
+msgid "Image"
+msgstr "Зображення"
+
+#. module: vet_clinic
+#: model:ir.model.fields.selection,name:vet_clinic.selection__vet_medicine__medicine_form__injection
+msgid "Injection"
+msgstr "Ін’єкція"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__message_is_follower
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__message_is_follower
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__message_is_follower
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__message_is_follower
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__message_is_follower
+msgid "Is Follower"
+msgstr "Є підписником"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_quick_appointment_wizard__write_uid
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__write_uid
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_breed__write_uid
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__write_uid
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_disease__write_uid
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__write_uid
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__write_uid
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__write_uid
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_species__write_uid
+msgid "Last Updated by"
+msgstr "Останній, хто оновив"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_quick_appointment_wizard__write_date
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__write_date
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_breed__write_date
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__write_date
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_disease__write_date
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__write_date
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__write_date
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__write_date
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_species__write_date
+msgid "Last Updated on"
+msgstr "Оновлено"
+
+#. module: vet_clinic
+#: model:ir.model.fields.selection,name:vet_clinic.selection__vet_medicine__medicine_form__liquid
+msgid "Liquid"
+msgstr "Рідина"
+
+#. module: vet_clinic
+#: model:ir.model.fields.selection,name:vet_clinic.selection__vet_patient__gender__male
+msgid "Male"
+msgstr "Самець"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__manufacturer
+msgid "Manufacturer"
+msgstr "Виробник"
+
+#. module: vet_clinic
+#: model_terms:ir.ui.view,arch_db:vet_clinic.vet_medicine_form_view
+msgid "Medication"
+msgstr "Медикамент"
+
+#. module: vet_clinic
+#: model:ir.actions.act_window,name:vet_clinic.action_vet_medicine
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__medicine_ids
+#: model:ir.ui.menu,name:vet_clinic.vet_clinic_medicine_menu
+msgid "Medications"
+msgstr "Медикаменти"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__message_has_error
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__message_has_error
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__message_has_error
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__message_has_error
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__message_has_error
+msgid "Message Delivery error"
+msgstr "Помилка доставки повідомлення"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__message_ids
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__message_ids
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__message_ids
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__message_ids
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__message_ids
+msgid "Messages"
+msgstr "Повідомлення"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__my_activity_date_deadline
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__my_activity_date_deadline
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__my_activity_date_deadline
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__my_activity_date_deadline
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Кінцевий термін моєї дії"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_disease__name
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__name
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__name
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_species__name
+msgid "Name"
+msgstr "Ім’я"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__activity_date_deadline
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__activity_date_deadline
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__activity_date_deadline
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__activity_date_deadline
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Кінцевий термін наступної дії"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__activity_summary
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__activity_summary
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__activity_summary
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__activity_summary
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__activity_summary
+msgid "Next Activity Summary"
+msgstr "Підсумок наступної дії"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__activity_type_id
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__activity_type_id
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__activity_type_id
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__activity_type_id
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__activity_type_id
+msgid "Next Activity Type"
+msgstr "Тип наступної дії"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__notes
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__notes
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__notes
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__notes
+msgid "Notes"
+msgstr "Примітки"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__message_needaction_counter
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__message_needaction_counter
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__message_needaction_counter
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__message_needaction_counter
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Кількість дій"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__message_has_error_counter
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__message_has_error_counter
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__message_has_error_counter
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__message_has_error_counter
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__message_has_error_counter
+msgid "Number of errors"
+msgstr "Кількість помилок"
+
+#. module: vet_clinic
+#: model:ir.model.fields,help:vet_clinic.field_vet_appointment__message_needaction_counter
+#: model:ir.model.fields,help:vet_clinic.field_vet_diagnosis__message_needaction_counter
+#: model:ir.model.fields,help:vet_clinic.field_vet_doctor__message_needaction_counter
+#: model:ir.model.fields,help:vet_clinic.field_vet_medicine__message_needaction_counter
+#: model:ir.model.fields,help:vet_clinic.field_vet_patient__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Кількість повідомлень, що потребують дії"
+
+#. module: vet_clinic
+#: model:ir.model.fields,help:vet_clinic.field_vet_appointment__message_has_error_counter
+#: model:ir.model.fields,help:vet_clinic.field_vet_diagnosis__message_has_error_counter
+#: model:ir.model.fields,help:vet_clinic.field_vet_doctor__message_has_error_counter
+#: model:ir.model.fields,help:vet_clinic.field_vet_medicine__message_has_error_counter
+#: model:ir.model.fields,help:vet_clinic.field_vet_patient__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Кількість повідомлень із помилкою доставки"
+
+#. module: vet_clinic
+#: model:ir.model.fields.selection,name:vet_clinic.selection__vet_medicine__medicine_form__ointment
+msgid "Ointment"
+msgstr "Мазь"
+
+#. module: vet_clinic
+#: model:ir.model.fields.selection,name:vet_clinic.selection__vet_medicine__medicine_form__other
+msgid "Other"
+msgstr "Інше"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__owner_id
+msgid "Owner"
+msgstr "Власник"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_quick_appointment_wizard__patient_id
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__patient_id
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__patient_id
+#: model_terms:ir.ui.view,arch_db:vet_clinic.vet_patient_form_view
+msgid "Patient"
+msgstr "Пацієнт"
+
+#. module: vet_clinic
+#: model:ir.actions.act_window,name:vet_clinic.action_vet_patient
+#: model:ir.ui.menu,name:vet_clinic.vet_clinic_patient_menu
+msgid "Patients"
+msgstr "Пацієнти"
+
+#. module: vet_clinic
+#: model:mail.template,name:vet_clinic.email_template_pet_birthday
+msgid "Pet Birthday Greeting"
+msgstr "Привітання з Днем народження улюбленця"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__name
+msgid "Pet Name"
+msgstr "Ім’я улюбленця"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_res_partner__pet_ids
+#: model:ir.model.fields,field_description:vet_clinic.field_res_users__pet_ids
+#: model_terms:ir.ui.view,arch_db:vet_clinic.view_partner_form_inherit_vet_clinic
+msgid "Pets"
+msgstr "Улюбленці"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__phone
+msgid "Phone"
+msgstr "Телефон"
+
+#. module: vet_clinic
+#: model:ir.model.fields.selection,name:vet_clinic.selection__vet_appointment__state__planned
+msgid "Planned"
+msgstr "Заплановано"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__price
+msgid "Price"
+msgstr "Ціна"
+
+#. module: vet_clinic
+#: model_terms:ir.ui.view,arch_db:vet_clinic.vet_diagnosis_form_view
+msgid "Print"
+msgstr "Друк"
+
+#. module: vet_clinic
+#: model:ir.actions.act_window,name:vet_clinic.action_quick_appointment_wizard
+#: model_terms:ir.ui.view,arch_db:vet_clinic.vet_patient_form_view
+msgid "Quick Appointment"
+msgstr "Швидкий прийом"
+
+#. module: vet_clinic
+#: model_terms:ir.ui.view,arch_db:vet_clinic.quick_appointment_wizard_form
+msgid "Quick Appointment Booking"
+msgstr "Швидке бронювання прийому"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_quick_appointment_wizard__reason
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__reason
+msgid "Reason"
+msgstr "Причина"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__recommendations
+msgid "Recommendations"
+msgstr "Рекомендації"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__activity_user_id
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__activity_user_id
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__activity_user_id
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__activity_user_id
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__activity_user_id
+msgid "Responsible User"
+msgstr "Відповідальний користувач"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__message_has_sms_error
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__message_has_sms_error
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__message_has_sms_error
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__message_has_sms_error
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Помилка доставки SMS"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_breed__species_id
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_patient__species_id
+msgid "Species"
+msgstr "Вид"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__state
+msgid "Status"
+msgstr "Статус"
+
+#. module: vet_clinic
+#: model:ir.model.fields,help:vet_clinic.field_vet_appointment__activity_state
+#: model:ir.model.fields,help:vet_clinic.field_vet_diagnosis__activity_state
+#: model:ir.model.fields,help:vet_clinic.field_vet_doctor__activity_state
+#: model:ir.model.fields,help:vet_clinic.field_vet_medicine__activity_state
+#: model:ir.model.fields,help:vet_clinic.field_vet_patient__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Статус на основі дій\n"
+"Протерміновано: дата виконання вже минула\n"
+"Сьогодні: дія запланована на сьогодні\n"
+"Заплановано: майбутні дії."
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_medicine__quantity
+msgid "Stock Quantity"
+msgstr "Кількість на складі"
+
+#. module: vet_clinic
+#: model:ir.model.fields.selection,name:vet_clinic.selection__vet_medicine__medicine_form__tablet
+msgid "Tablet"
+msgstr "Таблетка"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__treatment
+msgid "Treatment"
+msgstr "Лікування"
+
+#. module: vet_clinic
+#: model:ir.model.fields,help:vet_clinic.field_vet_appointment__activity_exception_decoration
+#: model:ir.model.fields,help:vet_clinic.field_vet_diagnosis__activity_exception_decoration
+#: model:ir.model.fields,help:vet_clinic.field_vet_doctor__activity_exception_decoration
+#: model:ir.model.fields,help:vet_clinic.field_vet_medicine__activity_exception_decoration
+#: model:ir.model.fields,help:vet_clinic.field_vet_patient__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Тип виняткової дії в записі."
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__user_id
+msgid "User"
+msgstr "Користувач"
+
+#. module: vet_clinic
+#: model:res.groups,name:vet_clinic.group_vet_admin
+msgid "Vet Clinic Admin"
+msgstr "Адміністратор ветклініки"
+
+#. module: vet_clinic
+#: model:res.groups,name:vet_clinic.group_vet_user
+msgid "Vet Clinic User"
+msgstr "Користувач ветклініки"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_appointment__doctor_id
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_diagnosis__doctor_id
+msgid "Veterinarian"
+msgstr "Ветеринар"
+
+#. module: vet_clinic
+#: model:ir.model,name:vet_clinic.model_vet_appointment
+msgid "Veterinary Appointment"
+msgstr "Ветеринарний прийом"
+
+#. module: vet_clinic
+#: model:ir.ui.menu,name:vet_clinic.vet_clinic_root_menu
+msgid "Veterinary Clinic"
+msgstr "Ветеринарна клініка"
+
+#. module: vet_clinic
+#: model:ir.model,name:vet_clinic.model_vet_diagnosis
+msgid "Veterinary Diagnosis and Treatment"
+msgstr "Ветеринарний діагноз і лікування"
+
+#. module: vet_clinic
+#: model:ir.model,name:vet_clinic.model_vet_doctor
+#: model_terms:ir.ui.view,arch_db:vet_clinic.vet_doctor_form_view
+msgid "Veterinary Doctor"
+msgstr "Ветеринарний лікар"
+
+#. module: vet_clinic
+#: model:ir.actions.act_window,name:vet_clinic.action_vet_doctor
+#: model:ir.ui.menu,name:vet_clinic.vet_clinic_doctor_menu
+msgid "Veterinary Doctors"
+msgstr "Ветеринарні лікарі"
+
+#. module: vet_clinic
+#: model:ir.model,name:vet_clinic.model_vet_medicine
+msgid "Veterinary Medicine"
+msgstr "Ветеринарні препарати"
+
+#. module: vet_clinic
+#: model:ir.model,name:vet_clinic.model_vet_patient
+msgid "Veterinary Patient"
+msgstr "Ветеринарний пацієнт"
+
+#. module: vet_clinic
+#: model:ir.model,name:vet_clinic.model_quick_appointment_wizard
+msgid "Wizard for Quick Appointment Booking"
+msgstr "Майстер швидкого бронювання прийому"
+
+#. module: vet_clinic
+#: model:ir.model.fields,field_description:vet_clinic.field_vet_doctor__experience_years
+msgid "Years of Experience"
+msgstr "Роки досвіду"

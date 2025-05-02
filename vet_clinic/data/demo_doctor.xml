@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Users -->
+    <record id="user_doctor_john" model="res.users">
+        <field name="name">Dr. John Barkley</field>
+        <field name="login">john.barkley@example.com</field>
+        <field name="email">john.barkley@example.com</field>
+        <field name="password">doctor123</field>
+        <field name="partner_id" eval="False"/>
+    </record>
+
+    <record id="user_doctor_susan" model="res.users">
+        <field name="name">Dr. Susan Whiskers</field>
+        <field name="login">susan.whiskers@example.com</field>
+        <field name="email">susan.whiskers@example.com</field>
+        <field name="password">doctor123</field>
+        <field name="partner_id" eval="False"/>
+    </record>
+
+    <!-- Doctors -->
+    <record id="vet_doctor_john" model="vet.doctor">
+        <field name="user_id" ref="user_doctor_john"/>
+        <field name="experience_years">5</field>
+        <field name="notes">Specialist in canine therapy and surgery.</field>
+    </record>
+
+    <record id="vet_doctor_susan" model="vet.doctor">
+        <field name="user_id" ref="user_doctor_susan"/>
+        <field name="experience_years">8</field>
+        <field name="notes">Expert in feline medicine and exotic animals.
+        </field>
+    </record>
+
+    <record id="user_doctor_kevin" model="res.users">
+        <field name="name">Dr. Kevin Feather</field>
+        <field name="login">kevin.feather@example.com</field>
+        <field name="email">kevin.feather@example.com</field>
+        <field name="password">doctor123</field>
+        <field name="partner_id" eval="False"/>
+    </record>
+
+    <record id="vet_doctor_kevin" model="vet.doctor">
+        <field name="user_id" ref="user_doctor_kevin"/>
+        <field name="experience_years">4</field>
+        <field name="notes">Avian care and exotic bird surgery specialist.
+        </field>
+    </record>
+
+</odoo>

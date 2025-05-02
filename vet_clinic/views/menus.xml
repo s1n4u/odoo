@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <menuitem id="vet_clinic_root_menu"
-              name="Ветеринарная клиника"
+              name="Veterinary Clinic"
               sequence="10"/>
 
     <menuitem id="vet_clinic_patient_menu"
-              name="Пациенты"
+              name="Patients"
               parent="vet_clinic_root_menu"
               action="action_vet_patient"
               sequence="10"/>
 
     <menuitem id="vet_clinic_doctor_menu"
-              name="Ветеринарные врачи"
+              name="Veterinary Doctors"
               parent="vet_clinic_root_menu"
               action="action_vet_doctor"
               sequence="20"/>
 
     <menuitem id="vet_clinic_appointment_menu"
-              name="Записи на приём"
+              name="Appointments"
               parent="vet_clinic_root_menu"
               action="action_vet_appointment"
               sequence="30"/>
 
     <menuitem id="vet_clinic_diagnosis_menu"
-              name="Диагнозы и лечение"
+              name="Diagnoses and Treatments"
               parent="vet_clinic_root_menu"
               action="action_vet_diagnosis"
               sequence="40"/>
 
     <menuitem id="vet_clinic_medicine_menu"
-              name="Медикаменты"
+              name="Medications"
               parent="vet_clinic_root_menu"
               action="action_vet_medicine"
               sequence="50"/>
