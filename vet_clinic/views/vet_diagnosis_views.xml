@@ -43,6 +43,16 @@
         </field>
     </record>
 
+    <record id="seq_vet_diagnosis" model="ir.sequence">
+        <field name="name">Vet Diagnosis</field>
+        <field name="code">vet.diagnosis</field>
+        <field name="prefix">DIAG-</field>
+        <field name="padding">5</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+
+
     <record id="action_vet_diagnosis" model="ir.actions.act_window">
         <field name="name">Diagnoses and Treatments</field>
         <field name="type">ir.actions.act_window</field>

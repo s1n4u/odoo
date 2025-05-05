@@ -38,16 +38,16 @@
         'data/cron.xml',
         'data/email_template.xml',
 
-        'data/data.xml',
-        'data/demo_medicine.xml',
-        'data/demo_disease.xml',
-
-        'data/demo_doctor.xml',
-        'data/demo_patient.xml',
-        'data/demo_appointment.xml',
-        'data/demo_diagnosis.xml',
     ],
     'demo': [
+        'demo/data.xml',
+        'demo/demo_medicine.xml',
+        'demo/demo_disease.xml',
+
+        'demo/demo_doctor.xml',
+        'demo/demo_patient.xml',
+        'demo/demo_appointment.xml',
+        'demo/demo_diagnosis.xml',
     ],
 
     'installable': True,

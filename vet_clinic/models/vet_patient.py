@@ -40,9 +40,10 @@ class VetPatient(models.Model):
     )
     gender = fields.Selection(
         selection=[
-        ('male', 'Male'),
-        ('female', 'Female'),
-    ], )
+            ('male', 'Male'),
+            ('female', 'Female'),
+        ],
+    )
     image = fields.Image()
     notes = fields.Text()
 

@@ -24,7 +24,6 @@
         <field name="model">vet.patient</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="image" widget="image" class="oe_avatar"/>
                 <field name="name"/>
                 <field name="species_id"/>
                 <field name="breed_id"/>
@@ -109,8 +108,8 @@
                             </div>
                             <field name="image" widget="image"
                                    class="oe_avatar oe_right"
-                                   options="{'preview_image': 'image_1920'}"
-                                   style="max-width:300px;max-height:300px;"/>
+                                   options="{'preview_image': 'image_256'}"
+                                   style="max-width:150px;max-height:150px;"/>
                         </div>
                     </t>
                 </templates>

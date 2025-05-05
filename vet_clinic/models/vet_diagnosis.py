@@ -21,6 +21,9 @@ class VetDiagnosis(models.Model):
                                     string='Medications')
     recommendations = fields.Text()
 
+    name = fields.Char(string="Diagnosis ID", required=True, copy=False,
+                       readonly=True, default='New')
+
     def action_print_diagnosis(self):
         return self.env.ref('vet_clinic.vet_diagnosis_report').report_action(
             self)
@@ -51,3 +54,10 @@ class VetDiagnosis(models.Model):
                     diagnosis.message_subscribe(partner_ids=partner_ids)
 
             return diagnoses
+
+    @api.model
+    def create(self, vals):
+        if vals.get('name', 'New') == 'New':
+            vals['name'] = self.env['ir.sequence'].next_by_code(
+                'vet.diagnosis') or 'New'
+        return super(VetDiagnosis, self).create(vals)
